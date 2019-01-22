@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Economiza Mais</string>
+
+\    <string name="title_produtos">Produtos</string>
+    <string name="title_lojas">Lojas</string>
+    <string name="title_listas">Listas</string>
+    <string name="title_activity_main2">Economiza Mais</string>
+</resources>
