@@ -1,10 +1,11 @@
-package br.com.economizamais.Activity
+package br.com.economizamais.code.activities
 
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Handler
 import android.content.Intent
 import br.com.economizamais.R
+import br.com.economizamais.code.activities.Main2Activity
 
 
 class SplashActivity : AppCompatActivity() {
