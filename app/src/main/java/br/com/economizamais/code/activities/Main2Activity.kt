@@ -2,12 +2,17 @@ package br.com.economizamais.code.activities
 
 import android.os.AsyncTask
 import android.os.Bundle
+import android.os.Handler
 import android.support.design.widget.BottomNavigationView
 import android.support.v7.app.AppCompatActivity
 import br.com.economizamais.R
 import kotlinx.android.synthetic.main.activity_main2.*
 import android.util.Log
 import br.com.economizamais.code.DataBase.ProdutoDatabase
+import br.com.economizamais.code.dao.DeleteAllProdutoTask
+import br.com.economizamais.code.dao.GetAllProdutoTask
+import br.com.economizamais.code.dao.InsertProdutoTask
+import br.com.economizamais.code.dao.ProdutoDao
 import br.com.economizamais.code.entities.Produto
 
 
@@ -45,67 +50,24 @@ class Main2Activity : AppCompatActivity() {
         database = ProdutoDatabase.getInstance(this)
 
 
+        DeleteAllProdutoTask(database).execute()
 
-        InsertProdutoTask(database).execute()
 
-        ListarItens(database).execute()
-        Log.i("TESTE ----->", "FUNCIONOU")
+        val produto = Produto(1, "Arroz", "Imagem",
+            "Descricao", "Detalhe", 10,
+            "Tio Jorge", "Atacado", "GO",
+            "Luziania", 88888, 99999)
+
+        InsertProdutoTask(database, produto).execute()
+
+        GetAllProdutoTask(database).execute()
 
 
     }
 }
 
 
-private class InsertProdutoTask(val database: ProdutoDatabase?): AsyncTask<Void, Void, Void?>(){
-
-    override fun doInBackground(vararg params: Void?): Void? {
-
-        var lastId = database?.ProdutoDao()?.findLastCarId()
-
-        if (lastId == null){
-            lastId = 1
-        }else{
-            lastId ++
-        }
-
-        val car = Produto(null,"Car DANILO")
-        database?.ProdutoDao()?.insert(car)
-
-        Log.i("TESTE ----->", "INSERT")
 
 
 
 
-        return null
-    }
-}
-
-private class ListarItens (val database: ProdutoDatabase?): AsyncTask<Void, Void, Void?>(){
-
-    override fun doInBackground(vararg params: Void?): Void? {
-
-        val lista = database?.ProdutoDao()?.getAllCar()
-
-
-        if (lista != null) {
-            Log.i("TESTE ----->", lista.size.toString())
-
-
-            for (i in 0.. lista.size-1) {
-                Log.i("TESTE ----->", lista[i].name)
-            }
-
-            for (i in 0.. lista.size-1) {
-                Log.i("TESTE ----->", lista[i].id.toString())
-            }
-
-        }
-
-
-//danilo danilo nogueira
-
-
-
-        return null
-    }
-}
