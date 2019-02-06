@@ -1,4 +1,4 @@
-package br.com.economizamais.code.network_utils
+package br.com.economizamais.code.controller.network_utils
 
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory

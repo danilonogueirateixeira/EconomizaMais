@@ -3,6 +3,7 @@
           xmlns:tools="http://schemas.android.com/tools"
           package="br.com.economizamais">
 
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.INTERNET"/>
@@ -19,7 +20,7 @@
             android:supportsRtl="true"
             android:theme="@style/AppTheme">
         <activity
-                android:name=".code.activities.Main2Activity"
+                android:name=".code.activities.MainActivity"
                 android:label="@string/title_activity_main2">
         </activity>
         <activity android:name=".code.activities.SplashActivity"
@@ -31,6 +32,8 @@
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
+
+
     </application>
 
 </manifest>
