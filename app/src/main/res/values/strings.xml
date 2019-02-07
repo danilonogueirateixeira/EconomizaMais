@@ -6,5 +6,12 @@
     <string name="title_listas">Listas</string>
     <string name="title_activity_main2">Economiza Mais</string>
     <string name="pesquisar_Produtos">Pesquisar Produtos</string>
+    <string name="never_ask_again_dialog">Para que possamos fazer ligações através do app é preciso que acesse as configurações do sistema e conceda manual a permissão. Caso concorde, clique no botão de ir para as configurações.</string>
+    <string name="go_to_settings">Ir para as configurações!</string>
+    <string name="permission_dialog_title">Permissão</string>
+    <string name="more_info_dialog">Para que possamos fazer ligações através do app é preciso que nos conceda permissão.</string>
+    <string name="yes">Sim</string>
+    <string name="no">Não</string>
+    <string name="permission_denied">Permissão foi recusada.</string>
 
 </resources>

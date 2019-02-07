@@ -7,6 +7,7 @@ import android.location.LocationManager
 import android.os.AsyncTask
 import android.os.Build
 import android.os.Bundle
+import android.os.Handler
 import android.support.annotation.RequiresApi
 import android.support.design.widget.BottomNavigationView
 import android.support.v7.app.AppCompatActivity
@@ -95,6 +96,9 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
 
+
+
+
         var intent: Intent = getIntent()
         var latitude: Double = intent.getSerializableExtra("latitude") as Double
         var longitude:Double = intent.getSerializableExtra("longitude") as Double
@@ -103,7 +107,18 @@ class MainActivity : AppCompatActivity() {
         Log.i("TESTE MAIN",  longitude.toString())
 
 
-       // Location().distancia(latitude, longitude, -15.945638, -48.260506)
+        Log.i("TESTE MAIN",  "TESTANDO")
+
+
+            Handler().postDelayed({
+                Log.i("TESTE hundler OK",  "OK")
+               // Log.i("TESTE Main Antes",  listaLojas!![0].toString())
+
+
+            }, 5000)
+
+
+        // Location().distancia(latitude, longitude, -15.945638, -48.260506)
         for(i in 0 until  listaLojas.size ){
             Log.i("TESTE Main Antes",  listaLojas!![i].toString())
 
