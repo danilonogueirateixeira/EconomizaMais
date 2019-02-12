@@ -9,10 +9,18 @@ import br.com.economizamais.R
 import br.com.economizamais.code.model.entities.Produto
 import com.bumptech.glide.Glide
 import kotlinx.android.synthetic.main.produto_item.view.*
+import java.text.NumberFormat
+import java.util.*
 
 class NoteListAdapter(private val produtos: List<Produto>,
                       private val context: Context
 ) : Adapter<NoteListAdapter.ViewHolder>() {
+
+
+
+
+    //var localeBR: Locale = Locale("pt","BR")
+    //var dinheiro: NumberFormat = NumberFormat.getCurrencyInstance(localeBR)
 
     override fun onBindViewHolder(p0: ViewHolder, position: Int) {
         val produto = produtos[position]
@@ -20,7 +28,13 @@ class NoteListAdapter(private val produtos: List<Produto>,
             it.nome.text = produto.nome
             it.marca.text = produto.marca
             it.loja.text = produto.loja
-            it.preco.text = ("R$ "+ produto.preco.toString())
+
+            //var preco: Double = produto.preco
+
+           // it.preco.text = (dinheiro.format(preco))
+            it.preco.text = AdapterUtils().formatarReal(produto.preco)
+
+           // it.preco.text = ("R$ "+ produto.preco.toString())
             Glide.with(context).load("http://res.cloudinary.com/hprhniuxo/image/upload/t_media_lib_thumb/"+produto.image).into(it.imagem)
 
 

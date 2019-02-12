@@ -6,7 +6,7 @@
         android:id="@+id/container"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".code.activities.MainActivity" android:visibility="visible">
+        tools:context=".code.view.MainActivity" android:visibility="visible">
 
     <android.support.design.widget.BottomNavigationView
             android:id="@+id/navigation"
