@@ -1,11 +1,10 @@
-package br.com.economizamais.code.controller.activities
+package br.com.economizamais.code.controller.splash
 
 import android.Manifest
 import android.annotation.SuppressLint
 import android.content.Context
 import android.content.ContextWrapper
 import android.content.Intent
-import android.util.Log
 import br.com.economizamais.code.controller.database.LojaDatabase
 import br.com.economizamais.code.controller.database.ProdutoDatabase
 import br.com.economizamais.code.controller.network_utils.NetworkUtils

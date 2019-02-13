@@ -1,4 +1,4 @@
-package br.com.economizamais.code.controller.adapter
+package br.com.economizamais.code.controller.main.adapter
 import android.content.Context
 import android.support.v7.widget.RecyclerView
 import android.support.v7.widget.RecyclerView.Adapter
@@ -7,10 +7,8 @@ import android.view.View
 import android.view.ViewGroup
 import br.com.economizamais.R
 import br.com.economizamais.code.model.entities.Loja
-import br.com.economizamais.code.model.entities.Produto
 import com.bumptech.glide.Glide
 import kotlinx.android.synthetic.main.loja_item.view.*
-import kotlinx.android.synthetic.main.produto_item.view.*
 
 class LojasListAdapter(private val lojas: List<Loja>,
                        private val context: Context
@@ -23,8 +21,6 @@ class LojasListAdapter(private val lojas: List<Loja>,
             it.eslogan.text = loja.eslogan
             it.uf.text = loja.uf
             Glide.with(context).load("http://res.cloudinary.com/hprhniuxo/image/upload/t_media_lib_thumb/"+loja.image).into(it.imagem)
-
-
         }
          }
 
@@ -44,11 +40,7 @@ class LojasListAdapter(private val lojas: List<Loja>,
         val uf = itemView.listlojatext_uf
         val imagem = itemView.listlojadimagem_img
 
-
-
     }
-
-
 
 }
 

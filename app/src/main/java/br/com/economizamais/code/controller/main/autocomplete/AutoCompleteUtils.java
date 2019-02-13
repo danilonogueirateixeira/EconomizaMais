@@ -1,8 +1,9 @@
-package br.com.economizamais.code.controller.adapter;
+package br.com.economizamais.code.controller.main.autocomplete;
 
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+// Realiza tratamento pra acentos no autocomplete
 public class AutoCompleteUtils {
 
 

@@ -1,4 +1,4 @@
-package br.com.economizamais.code.controller.adapter;
+package br.com.economizamais.code.controller.main.autocomplete;
 
 import android.content.Context;
 import android.widget.ArrayAdapter;
@@ -8,7 +8,7 @@ import android.widget.Filterable;
 import java.util.ArrayList;
 import java.util.List;
 
-import static br.com.economizamais.code.controller.adapter.AutoCompleteUtils.removeAcentos;
+import static br.com.economizamais.code.controller.main.autocomplete.AutoCompleteUtils.removeAcentos;
 
 public class AutoCompleteAdapter
         extends ArrayAdapter<String>

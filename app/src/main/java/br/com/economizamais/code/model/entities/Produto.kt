@@ -43,10 +43,7 @@ data class Produto (
     var longitude: Double
 )
 
-
-
 interface EndpointProduto {
-
     @GET("precos/app")
     fun getPosts() : Call<List<Produto>>
 }

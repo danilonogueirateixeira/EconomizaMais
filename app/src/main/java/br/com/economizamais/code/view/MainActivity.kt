@@ -1,8 +1,6 @@
 package br.com.economizamais.code.view
 
-import android.content.Context
 import android.content.Intent
-import android.location.LocationListener
 import android.os.AsyncTask
 import android.os.Build
 import android.os.Bundle
@@ -10,20 +8,18 @@ import android.support.annotation.RequiresApi
 import android.support.design.widget.BottomNavigationView
 import android.support.v7.app.AppCompatActivity
 import android.support.v7.widget.StaggeredGridLayoutManager
-import android.util.Log
 import android.view.View
-import android.view.inputmethod.InputMethodManager
 import android.widget.AdapterView
 import android.widget.Toast
-import br.com.economizamais.code.controller.adapter.NoteListAdapter
+import br.com.economizamais.code.controller.main.adapter.NoteListAdapter
 import br.com.economizamais.code.controller.database.ProdutoDatabase
 import br.com.economizamais.code.model.entities.Produto
 import kotlinx.android.synthetic.main.activity_main.*
 import br.com.economizamais.R
-import br.com.economizamais.code.controller.Location
-import br.com.economizamais.code.controller.activities.MainController
-import br.com.economizamais.code.controller.adapter.AutoCompleteAdapter
-import br.com.economizamais.code.controller.adapter.LojasListAdapter
+import br.com.economizamais.code.controller.main.location.Location
+import br.com.economizamais.code.controller.main.MainController
+import br.com.economizamais.code.controller.main.autocomplete.AutoCompleteAdapter
+import br.com.economizamais.code.controller.main.adapter.LojasListAdapter
 import br.com.economizamais.code.controller.database.LojaDatabase
 import br.com.economizamais.code.model.entities.Loja
 
@@ -125,14 +121,17 @@ class MainActivity : AppCompatActivity() {
 
         // Recupera a distanca para todas as lojas
         for(i in 0 until  listaLojas!!.size ){
-           listaLojas!![i].distancia =  Location().distancia(latitude, longitude, listaLojas!![i].latitude,listaLojas!![i].longitude)
+           listaLojas!![i].distancia =  Location()
+               .distancia(latitude, longitude, listaLojas!![i].latitude,listaLojas!![i].longitude)
         }
 
         // Filtra as Lojas através da distancia
-        listaLojas = MainController().filtrarLojasDistancia(listaLojas, listaLojasTemp)
+        listaLojas = MainController()
+            .filtrarLojasDistancia(listaLojas, listaLojasTemp)
 
         // Filtra os Produtos através das lojas por distancia
-        listaProdutos = MainController().filtrarProdutosLojas(listaProdutos, listaProdutosTemp, listaLojasTemp)
+        listaProdutos = MainController()
+            .filtrarProdutosLojas(listaProdutos, listaProdutosTemp, listaLojasTemp)
 
         // Limpa a lista do AutoComplete
         listaNomeMarca.clear()

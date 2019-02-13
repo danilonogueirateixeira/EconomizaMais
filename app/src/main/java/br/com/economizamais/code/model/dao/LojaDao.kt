@@ -13,44 +13,47 @@ import br.com.economizamais.code.model.entities.Produto
 @Dao
 interface LojaDao {
 
+    /** Query **/
 
+    // Insere uma loja no Banco de Dados
     @Insert
     fun insertLoja(loja: Loja)
 
+    // Recupera o último ID cadastrado
     @Query("SELECT MAX(id) FROM Loja")
     fun findLastLojaId (): Long
 
+    // Recupera todas as Lojas
     @Query("SELECT * from Loja ORDER BY id ASC")
     fun getAllLoja(): List<Loja>
 
+    // Deleta Todas as Lojas
     @Query("DELETE from Loja")
     fun deleteAllLoja()
 }
 
+/** Funções **/
 
+
+// Class assyncrona para manipulação dos dados
 class InsertLojaTask(val database: LojaDatabase?, val loja: Loja): AsyncTask<Void, Void, Void?>(){
 
+    // Insere uma Loja
     override fun doInBackground(vararg params: Void?): Void? {
-
         database?.LojaDao()?.insertLoja(loja)
 
         return null
     }
 }
 
-
-
-
+// Class assyncrona para manipulação dos dados
 class DeleteAllLojaTask (val database: LojaDatabase?): AsyncTask<Void, Void, Void?>(){
 
+    // Deleta todas as lojas
     override fun doInBackground(vararg params: Void?): Void? {
-
         database?.LojaDao()?.deleteAllLoja()
 
         return null
     }
-
-
-
 }
 

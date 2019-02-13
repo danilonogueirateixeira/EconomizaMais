@@ -1,4 +1,4 @@
-package br.com.economizamais.code.controller.adapter
+package br.com.economizamais.code.controller.main.adapter
 import android.content.Context
 import android.support.v7.widget.RecyclerView
 import android.support.v7.widget.RecyclerView.Adapter
@@ -6,11 +6,10 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import br.com.economizamais.R
+import br.com.economizamais.code.controller.main.FormataDados
 import br.com.economizamais.code.model.entities.Produto
 import com.bumptech.glide.Glide
 import kotlinx.android.synthetic.main.produto_item.view.*
-import java.text.NumberFormat
-import java.util.*
 
 class NoteListAdapter(private val produtos: List<Produto>,
                       private val context: Context
@@ -32,7 +31,7 @@ class NoteListAdapter(private val produtos: List<Produto>,
             //var preco: Double = produto.preco
 
            // it.preco.text = (dinheiro.format(preco))
-            it.preco.text = AdapterUtils().formatarReal(produto.preco)
+            it.preco.text = FormataDados().formatarReal(produto.preco)
 
            // it.preco.text = ("R$ "+ produto.preco.toString())
             Glide.with(context).load("http://res.cloudinary.com/hprhniuxo/image/upload/t_media_lib_thumb/"+produto.image).into(it.imagem)

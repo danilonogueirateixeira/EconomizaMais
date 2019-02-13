@@ -1,17 +1,11 @@
-package br.com.economizamais.code.controller
+package br.com.economizamais.code.controller.main.location
 
-import android.annotation.SuppressLint
-import android.content.Context
-import android.util.Log
-import com.google.android.gms.location.FusedLocationProviderClient
-import com.google.android.gms.location.LocationServices
 import com.google.android.gms.maps.model.LatLng
 import com.google.maps.android.SphericalUtil
 
-
-
 class Location{
 
+    // Recupera a distancia entre duas coordenadas
     fun distancia (latOrigem: Double, lgtOrigem: Double, latDestino: Double, lgtDestino: Double):Double{
 
         val posicaoInicial = LatLng(latOrigem, lgtOrigem)
@@ -21,13 +15,9 @@ class Location{
     var distance = SphericalUtil.computeDistanceBetween(posicaoInicial, posicaoFinal)
 
         distance = distance/1000
-        Log.i("TESTE","A Distancia era = "+distance)
 
-
+        // Adiciona 50% a mais na distância para o calculo ficar mais aproximado do real
         distance = distance + (distance*0.5)
-
-        Log.i("TESTE","A Distancia é = "+distance)
-
 
         return distance
     }

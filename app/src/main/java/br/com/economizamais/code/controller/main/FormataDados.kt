@@ -1,18 +1,18 @@
-package br.com.economizamais.code.controller.adapter
+package br.com.economizamais.code.controller.main
 
 import java.text.NumberFormat
 import java.util.*
 
-class AdapterUtils{
+class FormataDados{
 
-
-
+    // Formata um Double para formato da moeda Brasileira, o Real
     fun formatarReal (double: Double):String{
-        var localeBR: Locale = Locale("pt","BR")
+        var localeBR = Locale("pt","BR")
         var real: NumberFormat = NumberFormat.getCurrencyInstance(localeBR)
 
         var preco: Double = double
 
         return real.format(preco)
     }
+
 }

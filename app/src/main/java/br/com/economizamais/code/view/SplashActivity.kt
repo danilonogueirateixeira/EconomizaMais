@@ -8,7 +8,7 @@ import android.os.Bundle
 import android.content.pm.PackageManager
 import android.os.Handler
 import br.com.economizamais.R
-import br.com.economizamais.code.controller.activities.SplashController
+import br.com.economizamais.code.controller.splash.SplashController
 import kotlinx.android.synthetic.main.activity_splash.*
 
 

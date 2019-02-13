@@ -45,10 +45,7 @@ data class Loja (
     var distancia: Double
 )
 
-
-
 interface EndpointLoja {
-
     @GET("lojas")
     fun getPosts() : Call<List<Loja>>
 }
