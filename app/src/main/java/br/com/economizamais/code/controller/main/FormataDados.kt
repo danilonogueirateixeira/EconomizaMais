@@ -15,4 +15,9 @@ class FormataDados{
         return real.format(preco)
     }
 
+    fun formataKm (double: Double): String{
+        val solution = String.format("%.1f", double)
+        return solution + " km"
+    }
+
 }

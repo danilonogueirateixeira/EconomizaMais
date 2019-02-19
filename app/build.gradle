@@ -6,6 +6,9 @@ apply plugin: 'kotlin-android-extensions'
 
 apply plugin: 'kotlin-kapt'
 
+androidExtensions {
+    experimental = true
+}
 
 android {
     compileSdkVersion 28
@@ -38,7 +41,7 @@ dependencies {
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
 
     implementation "android.arch.persistence.room:runtime:1.1.1"
-    kapt  "android.arch.persistence.room:compiler:1.1.1"
+    kapt "android.arch.persistence.room:compiler:1.1.1"
 
     implementation "android.arch.lifecycle:extensions:1.1.1"
     kapt "android.arch.lifecycle:compiler:1.1.1"
@@ -60,10 +63,9 @@ dependencies {
     implementation 'com.squareup.retrofit2:converter-jackson:2.2.0'
     implementation 'com.squareup.okhttp3:logging-interceptor:3.6.0'
 
-
     // PlayServices dependency
     implementation 'com.google.android.gms:play-services-maps:16.0.0'
-    implementation 'com.google.android.gms:play-services-location:15.0.1'
+    implementation 'com.google.android.gms:play-services-location:16.0.0'
 
     implementation 'com.google.maps.android:android-maps-utils:0.4+'
 
@@ -73,6 +75,5 @@ dependencies {
 
     implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-core:1.0.1'
     implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-android:1.0.1'
-
 
 }

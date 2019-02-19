@@ -2,13 +2,16 @@ package br.com.economizamais.code.model.entities
 
 import android.arch.persistence.room.Entity
 import android.arch.persistence.room.PrimaryKey
+import android.os.Parcelable
 import android.support.annotation.NonNull
 import com.google.gson.annotations.SerializedName
+import kotlinx.android.parcel.Parcelize
 import retrofit2.Call
 import retrofit2.http.GET
 import java.sql.Date
 import java.util.*
 
+@Parcelize
 @Entity
 data class Produto (
     @NonNull
@@ -41,7 +44,7 @@ data class Produto (
     var latitude: Double,
     @SerializedName("longitude")
     var longitude: Double
-)
+) : Parcelable
 
 interface EndpointProduto {
     @GET("precos/app")

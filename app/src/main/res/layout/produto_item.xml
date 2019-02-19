@@ -18,7 +18,7 @@
 
         <ImageView
                 android:layout_width="80dp"
-                android:layout_height="80dp" app:srcCompat="@drawable/nao_encontrado"
+                android:layout_height="80dp"
                 android:id="@+id/listprodimagem_img" android:layout_marginTop="4dp"
                 app:layout_constraintTop_toTopOf="parent" android:layout_marginBottom="4dp"
                 app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintStart_toStartOf="parent"

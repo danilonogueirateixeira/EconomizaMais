@@ -4,11 +4,10 @@
           package="br.com.economizamais">
 
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
-    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
     <uses-permission android:name="android.permission.INTERNET"/>
-
-
+    <uses-permission android:name="com.google.android.providers.gsf.permission.READ_GSERVICES" />
 
 
     <application
@@ -20,27 +19,39 @@
             android:theme="@style/AppTheme"
             android:usesCleartextTraffic="true">
 
+
+        <meta-data
+                android:name="com.google.android.geo.API_KEY"
+                android:value="AIzaSyCW8vYSyllgyRu2d14QxLgcNSdRAjUi8yQ"/>
+
+
+        <activity android:name=".code.view.Mapa">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".code.view.DetalhesProdutoActivity">
+        </activity>
         <activity
                 android:name=".code.view.MainActivity"
                 android:label="@string/title_activity_main2">
-        <intent-filter>
-            <action android:name="ABRIR_TELA"/>
-            <category android:name="android.intent.category.DEFAULT"/>
-            <category android:name="DETALHES"/>
-        </intent-filter>
+            <intent-filter>
+                <action android:name="ABRIR_TELA"/>
 
-
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="DETALHES"/>
+            </intent-filter>
         </activity>
-        <activity android:name=".code.view.SplashActivity"
-                  android:theme="@style/AppCompat.TelaCheia">
+        <activity
+                android:name=".code.view.SplashActivity"
+                android:theme="@style/AppCompat.TelaCheia">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
 
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
-
-
     </application>
 
 </manifest>

@@ -7,7 +7,9 @@ import android.os.Bundle
 import android.support.annotation.RequiresApi
 import android.support.design.widget.BottomNavigationView
 import android.support.v7.app.AppCompatActivity
+import android.support.v7.widget.RecyclerView
 import android.support.v7.widget.StaggeredGridLayoutManager
+import android.util.Log
 import android.view.View
 import android.widget.AdapterView
 import android.widget.Toast
@@ -21,6 +23,7 @@ import br.com.economizamais.code.controller.main.MainController
 import br.com.economizamais.code.controller.main.autocomplete.AutoCompleteAdapter
 import br.com.economizamais.code.controller.main.adapter.LojasListAdapter
 import br.com.economizamais.code.controller.database.LojaDatabase
+import br.com.economizamais.code.controller.detalhes_produto.DetalhesProdutoController
 import br.com.economizamais.code.model.entities.Loja
 
 
@@ -138,7 +141,10 @@ class MainActivity : AppCompatActivity() {
 
         // Aciciona os produtos selecionados a lista do AutoComplete
         for(i in 0 until  listaProdutos!!.size ){
-            listaNomeMarca.add(listaProdutos!![i].nome+" "+ listaProdutos!![i].marca)
+            listaNomeMarca.add(listaProdutos!![i].nome+" "+ listaProdutos!![i].marca+" "+ listaProdutos[i].descricao)
+            Log.i("TESTE LISTAPRODUTOS " +i, listaProdutos[i].nome +" "+ listaProdutos[i].marca)
+            Log.i("TESTE LISTANOMEMARCA " +i, listaNomeMarca[i])
+
         }
 
         // Limpa a lista do AutoComplete
@@ -160,6 +166,27 @@ class MainActivity : AppCompatActivity() {
         recyclerView.layoutManager = layoutManager
 
 
+
+//        pesquisaprodutos_autocomplete.onItemClickListener = AdapterView.OnItemClickListener{
+//                parent,view,position,id->
+//            val selectedItem = parent.getItemAtPosition(position).toString()
+
+
+        recyclerView.addOnItemClickListener(object: OnItemClickListener {
+            override fun onItemClicked(position: Int, view: View) {
+
+
+                Log.i("TESTE POSITION", position.toString())
+                Log.i("TESTE POSITION", listaProdutos[position].toString())
+
+                val selectedItem = listaProdutos[position].nome+" "+ listaProdutos[position].marca.toString()
+
+                MainController().cliqueProduto(listaProdutos, listaLojas, listaProdutos[position],latitude, longitude, this@MainActivity )
+
+                //recyclerView.adapter!!.getItemId(position)
+            }
+        })
+
         // Preenche o AutoComplete de produtos na pagina inicial
         val adapter = AutoCompleteAdapter(
             this, // Context
@@ -176,7 +203,13 @@ class MainActivity : AppCompatActivity() {
                 parent,view,position,id->
             val selectedItem = parent.getItemAtPosition(position).toString()
 
+            var produto = MainController().recuperaId(selectedItem)
+
             Toast.makeText(applicationContext,"$selectedItem",Toast.LENGTH_SHORT).show()
+
+            Log.i("TESTE POSITION", produto.toString())
+
+            MainController().cliqueProduto(listaProdutos, listaLojas, produto, latitude, longitude, this )
         }
 
         // Clique fora do AutoCompelte
@@ -201,6 +234,35 @@ class MainActivity : AppCompatActivity() {
             }
         }
     }
+
+
+
+
+
+
+
+    interface OnItemClickListener {
+        fun onItemClicked(position: Int, view: View)
+    }
+
+    fun RecyclerView.addOnItemClickListener(onClickListener: OnItemClickListener) {
+        this.addOnChildAttachStateChangeListener(object: RecyclerView.OnChildAttachStateChangeListener {
+            override fun onChildViewDetachedFromWindow(p0: View) {
+                p0?.setOnClickListener(null)
+            }
+
+            override fun onChildViewAttachedToWindow(p0: View) {
+                p0?.setOnClickListener({
+                    val holder = getChildViewHolder(p0)
+                    onClickListener.onItemClicked(holder.adapterPosition, p0)
+                })
+            }
+        })
+    }
+
+
+
+
 }
 
 
@@ -226,7 +288,6 @@ class GetAllLojaTask (val database: LojaDatabase?): AsyncTask<Void, Void, Void?>
         return null
     }
 }
-
 
 
 

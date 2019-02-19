@@ -50,6 +50,8 @@ class NoteListAdapter(private val produtos: List<Produto>,
         return produtos.size
     }
 
+
+
     class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         val nome = itemView.listprodtext_nome
         val marca = itemView.listprodtext_marca
