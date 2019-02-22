@@ -15,6 +15,7 @@ class FormataDados{
         return real.format(preco)
     }
 
+    // Formata dados para exibir apenas 2 digitos
     fun formataKm (double: Double): String{
         val solution = String.format("%.1f", double)
         return solution + " km"

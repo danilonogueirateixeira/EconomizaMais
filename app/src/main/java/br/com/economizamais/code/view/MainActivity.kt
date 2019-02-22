@@ -95,6 +95,22 @@ class MainActivity : AppCompatActivity() {
                 // Altera o texto padrão do AutoComplete
                 pesquisaprodutos_autocomplete.setHint(R.string.pesquisar_lojas)
 
+
+                /////////////////////////////////////////////////////////////////////////////////////////////
+                // Quantidade de digitos para abrir o AutoComplete
+                pesquisaprodutos_autocomplete.threshold = 2
+
+                // Clique em item no AutoComplete
+                pesquisaprodutos_autocomplete.onItemClickListener = AdapterView.OnItemClickListener{
+                        parent,view,position,id->
+                    val selectedItem = parent.getItemAtPosition(position).toString()
+
+
+
+                    Log.i("TESTE LOJA", selectedItem)
+
+                }
+
                 return@OnNavigationItemSelectedListener true
             }
 

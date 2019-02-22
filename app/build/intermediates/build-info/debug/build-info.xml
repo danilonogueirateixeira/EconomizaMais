@@ -2,27 +2,26 @@
 <instant-run
     abi="arm64-v8a,armeabi-v7a,armeabi"
     api-level="26"
-    build-mode="COLD"
+    build-mode="FULL"
     density="420dpi"
     format="10"
-    ir-eligibility="FIELD_ADDED"
     plugin-version="3.3.0"
-    timestamp="1550538180705"
+    timestamp="1550798745627"
     token="-3261996863321310836"
-    verifier="COLD_SWAP_REQUESTED" >
+    verifier="FULL_BUILD_REQUESTED" >
 
     <task
         name="javac"
-        duration="495" />
+        duration="554" />
     <task
         name="instant-run-dex"
         duration="0" />
     <task
         name="instant-run-transform"
-        duration="88" />
+        duration="263" />
     <task
         name="verifier"
-        duration="5" />
+        duration="195" />
 
     <artifact
         location="/Users/danilo/Desktop/OneDrive/Projetos/2019/EconomizaMais/app/build/intermediates/split-apk/debug/slices/slice_3.apk"
@@ -31,12 +30,42 @@
         location="/Users/danilo/Desktop/OneDrive/Projetos/2019/EconomizaMais/app/build/intermediates/split-apk/debug/slices/slice_6.apk"
         type="SPLIT" />
     <artifact
+        location="/Users/danilo/Desktop/OneDrive/Projetos/2019/EconomizaMais/app/build/intermediates/instant-run-apk/debug/app-debug.apk"
+        type="SPLIT_MAIN" />
+    <artifact
+        location="/Users/danilo/Desktop/OneDrive/Projetos/2019/EconomizaMais/app/build/intermediates/split-apk/debug/slices/slice_4.apk"
+        type="SPLIT" />
+    <artifact
+        location="/Users/danilo/Desktop/OneDrive/Projetos/2019/EconomizaMais/app/build/intermediates/split-apk/debug/slices/slice_5.apk"
+        type="SPLIT" />
+    <artifact
+        location="/Users/danilo/Desktop/OneDrive/Projetos/2019/EconomizaMais/app/build/intermediates/split-apk/debug/slices/slice_9.apk"
+        type="SPLIT" />
+    <artifact
+        location="/Users/danilo/Desktop/OneDrive/Projetos/2019/EconomizaMais/app/build/intermediates/split-apk/debug/slices/slice_8.apk"
+        type="SPLIT" />
+    <artifact
         location="/Users/danilo/Desktop/OneDrive/Projetos/2019/EconomizaMais/app/build/intermediates/split-apk/debug/slices/slice_7.apk"
+        type="SPLIT" />
+    <artifact
+        location="/Users/danilo/Desktop/OneDrive/Projetos/2019/EconomizaMais/app/build/intermediates/split-apk/debug/slices/slice_1.apk"
+        type="SPLIT" />
+    <artifact
+        location="/Users/danilo/Desktop/OneDrive/Projetos/2019/EconomizaMais/app/build/intermediates/split-apk/debug/slices/slice_2.apk"
+        type="SPLIT" />
+    <artifact
+        location="/Users/danilo/Desktop/OneDrive/Projetos/2019/EconomizaMais/app/build/intermediates/resources/instant-run/debug/resources-debug.apk"
+        type="SPLIT" />
+    <artifact
+        location="/Users/danilo/Desktop/OneDrive/Projetos/2019/EconomizaMais/app/build/intermediates/split-apk/debug/slices/slice_0.apk"
+        type="SPLIT" />
+    <artifact
+        location="/Users/danilo/Desktop/OneDrive/Projetos/2019/EconomizaMais/app/build/intermediates/split-apk/debug/dep/dependencies.apk"
         type="SPLIT" />
 
     <build
         build-mode="FULL"
-        timestamp="1550534244252"
+        timestamp="1550798745627"
         verifier="FULL_BUILD_REQUESTED" >
         <artifact
             location="/Users/danilo/Desktop/OneDrive/Projetos/2019/EconomizaMais/app/build/intermediates/split-apk/debug/slices/slice_3.apk"
@@ -66,61 +95,16 @@
             location="/Users/danilo/Desktop/OneDrive/Projetos/2019/EconomizaMais/app/build/intermediates/split-apk/debug/slices/slice_1.apk"
             type="SPLIT" />
         <artifact
-            location="/Users/danilo/Desktop/OneDrive/Projetos/2019/EconomizaMais/app/build/intermediates/resources/instant-run/debug/resources-debug.apk"
+            location="/Users/danilo/Desktop/OneDrive/Projetos/2019/EconomizaMais/app/build/intermediates/split-apk/debug/slices/slice_2.apk"
             type="SPLIT" />
         <artifact
-            location="/Users/danilo/Desktop/OneDrive/Projetos/2019/EconomizaMais/app/build/intermediates/split-apk/debug/slices/slice_2.apk"
+            location="/Users/danilo/Desktop/OneDrive/Projetos/2019/EconomizaMais/app/build/intermediates/resources/instant-run/debug/resources-debug.apk"
             type="SPLIT" />
         <artifact
             location="/Users/danilo/Desktop/OneDrive/Projetos/2019/EconomizaMais/app/build/intermediates/split-apk/debug/slices/slice_0.apk"
             type="SPLIT" />
         <artifact
             location="/Users/danilo/Desktop/OneDrive/Projetos/2019/EconomizaMais/app/build/intermediates/split-apk/debug/dep/dependencies.apk"
-            type="SPLIT" />
-    </build>
-    <build
-        build-mode="COLD"
-        ir-eligibility="R_CLASS_CHANGE"
-        timestamp="1550536397949"
-        verifier="COLD_SWAP_REQUESTED" >
-        <artifact
-            location="/Users/danilo/Desktop/OneDrive/Projetos/2019/EconomizaMais/app/build/intermediates/resources/instant-run/debug/resources-debug.apk"
-            type="SPLIT" />
-        <artifact
-            location="/Users/danilo/Desktop/OneDrive/Projetos/2019/EconomizaMais/app/build/intermediates/split-apk/debug/slices/slice_0.apk"
-            type="SPLIT" />
-        <artifact
-            location="/Users/danilo/Desktop/OneDrive/Projetos/2019/EconomizaMais/app/build/intermediates/split-apk/debug/slices/slice_1.apk"
-            type="SPLIT" />
-        <artifact
-            location="/Users/danilo/Desktop/OneDrive/Projetos/2019/EconomizaMais/app/build/intermediates/split-apk/debug/slices/slice_2.apk"
-            type="SPLIT" />
-        <artifact
-            location="/Users/danilo/Desktop/OneDrive/Projetos/2019/EconomizaMais/app/build/intermediates/split-apk/debug/slices/slice_5.apk"
-            type="SPLIT" />
-        <artifact
-            location="/Users/danilo/Desktop/OneDrive/Projetos/2019/EconomizaMais/app/build/intermediates/split-apk/debug/slices/slice_4.apk"
-            type="SPLIT" />
-        <artifact
-            location="/Users/danilo/Desktop/OneDrive/Projetos/2019/EconomizaMais/app/build/intermediates/split-apk/debug/slices/slice_9.apk"
-            type="SPLIT" />
-        <artifact
-            location="/Users/danilo/Desktop/OneDrive/Projetos/2019/EconomizaMais/app/build/intermediates/split-apk/debug/slices/slice_8.apk"
-            type="SPLIT" />
-    </build>
-    <build
-        build-mode="COLD"
-        ir-eligibility="FIELD_ADDED"
-        timestamp="1550538180705"
-        verifier="COLD_SWAP_REQUESTED" >
-        <artifact
-            location="/Users/danilo/Desktop/OneDrive/Projetos/2019/EconomizaMais/app/build/intermediates/split-apk/debug/slices/slice_3.apk"
-            type="SPLIT" />
-        <artifact
-            location="/Users/danilo/Desktop/OneDrive/Projetos/2019/EconomizaMais/app/build/intermediates/split-apk/debug/slices/slice_6.apk"
-            type="SPLIT" />
-        <artifact
-            location="/Users/danilo/Desktop/OneDrive/Projetos/2019/EconomizaMais/app/build/intermediates/split-apk/debug/slices/slice_7.apk"
             type="SPLIT" />
     </build>
 

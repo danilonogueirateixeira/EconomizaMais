@@ -6,9 +6,11 @@
 
     <android.support.constraint.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="70dp" android:background="@color/colorAccent"
-            tools:layout_editor_absoluteX="0dp" android:id="@+id/constraintLayout"
-            app:layout_constraintTop_toBottomOf="@+id/imageView_LogoLoja">
+            android:layout_height="75dp" android:background="@color/colorAccent"
+            android:id="@+id/constraintLayout"
+            app:layout_constraintTop_toBottomOf="@+id/imageView_LogoLoja" app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+    >
 
     </android.support.constraint.ConstraintLayout>
     <TextView
@@ -16,71 +18,82 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/textView_Preco" android:textSize="36sp"
-            android:textStyle="bold" android:textColor="@android:color/holo_green_dark"
+            android:textColor="@android:color/holo_green_dark"
             android:layout_marginEnd="8dp"
             app:layout_constraintEnd_toEndOf="parent" android:layout_marginRight="8dp"
-            app:layout_constraintTop_toBottomOf="@+id/imageView8" android:layout_marginTop="16dp"/>
+            app:layout_constraintTop_toBottomOf="@+id/imageView8" android:layout_marginTop="16dp"
+            android:textAllCaps="false" android:textStyle="bold"/>
     <ImageView
             android:layout_height="wrap_content" app:srcCompat="@mipmap/ic_launcher_round"
             android:id="@+id/imageView_LogoLoja" app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             android:layout_width="0dp"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"/>
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintBottom_toTopOf="@+id/constraintLayout"/>
     <TextView
             android:text="Endereço Compelto"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:id="@+id/textView_Endereco"
-            app:layout_constraintStart_toStartOf="parent"
-            android:layout_marginLeft="8dp" android:layout_marginStart="8dp"
-            android:layout_marginTop="16dp" app:layout_constraintTop_toBottomOf="@+id/imageView_LogoLoja"
-            android:textColor="@android:color/white"/>
+            app:layout_constraintTop_toBottomOf="@+id/imageView_LogoLoja"
+            android:textColor="@android:color/white" android:textSize="18sp"
+            android:textStyle="bold"
+            android:layout_marginStart="8dp" app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginLeft="8dp" android:layout_marginEnd="8dp"
+            app:layout_constraintEnd_toStartOf="@+id/imageView_Ligar" android:layout_marginRight="8dp"/>
     <TextView
             android:text="Cidade"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/textView_Cidade"
-            android:layout_marginTop="8dp"
-            app:layout_constraintTop_toBottomOf="@+id/textView_Endereco" app:layout_constraintStart_toStartOf="parent"
-            android:layout_marginLeft="8dp" android:layout_marginStart="8dp" android:textColor="@android:color/white"/>
+            app:layout_constraintTop_toBottomOf="@+id/textView_Endereco"
+            android:textColor="@android:color/white" android:textSize="18sp"
+            android:layout_marginStart="8dp" app:layout_constraintStart_toStartOf="@+id/constraintLayout"
+            android:layout_marginLeft="8dp"/>
     <TextView
             android:text="GO"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:id="@+id/textView_Estado"
             app:layout_constraintStart_toEndOf="@+id/textView_Cidade"
-            android:layout_marginLeft="8dp" android:layout_marginStart="8dp" android:layout_marginTop="8dp"
-            app:layout_constraintTop_toBottomOf="@+id/textView_Endereco" android:textColor="@android:color/white"/>
+            android:layout_marginLeft="8dp" android:layout_marginStart="8dp"
+            app:layout_constraintTop_toBottomOf="@+id/textView_Endereco" android:textColor="@android:color/white"
+            android:textSize="18sp" android:layout_marginEnd="8dp"
+            app:layout_constraintEnd_toStartOf="@+id/imageView_Ligar" android:layout_marginRight="8dp"/>
     <TextView
             android:text="Você está a aproximadamente"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:id="@+id/textView_VoceEsta"
-            android:layout_marginTop="8dp"
-            app:layout_constraintTop_toBottomOf="@+id/textView_Endereco"
-            app:layout_constraintEnd_toStartOf="@+id/textView_Distancia" android:layout_marginEnd="8dp"
-            android:layout_marginRight="8dp" android:textColor="@android:color/white"/>
+            android:textColor="@android:color/white"
+            app:layout_constraintBottom_toBottomOf="@+id/constraintLayout"
+            app:layout_constraintEnd_toStartOf="@+id/textView_Distancia"
+            android:layout_marginEnd="8dp" android:layout_marginRight="8dp"
+    />
     <TextView
             android:text="XX km"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:id="@+id/textView_Distancia"
-            android:layout_marginTop="8dp" app:layout_constraintTop_toBottomOf="@+id/textView_Endereco"
-            app:layout_constraintEnd_toStartOf="@+id/imageView_Rotas" android:textColor="@android:color/white"/>
+            android:textColor="@android:color/white"
+            app:layout_constraintBottom_toBottomOf="@+id/constraintLayout"
+            app:layout_constraintEnd_toStartOf="@+id/imageView_Rotas" android:layout_marginEnd="8dp"
+            android:layout_marginRight="8dp"/>
     <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" app:srcCompat="@android:drawable/sym_action_call"
             android:id="@+id/imageView_Ligar"
-            app:layout_constraintEnd_toEndOf="parent"
-            android:layout_marginEnd="8dp" android:layout_marginRight="8dp"
-            android:layout_marginTop="8dp" app:layout_constraintTop_toBottomOf="@+id/imageView_LogoLoja"/>
+            app:layout_constraintTop_toBottomOf="@+id/imageView_LogoLoja" android:layout_marginTop="4dp"
+            app:layout_constraintEnd_toEndOf="@+id/constraintLayout" android:layout_marginEnd="8dp"
+            android:layout_marginRight="8dp"/>
     <ImageView
             android:layout_width="32dp"
             android:layout_height="32dp" app:srcCompat="@drawable/localizacao"
-            android:id="@+id/imageView_Rotas" app:layout_constraintEnd_toEndOf="parent" android:layout_marginEnd="8dp"
-            android:layout_marginRight="8dp"
-            app:layout_constraintBottom_toBottomOf="@+id/constraintLayout"/>
+            android:id="@+id/imageView_Rotas"
+            app:layout_constraintBottom_toBottomOf="@+id/constraintLayout"
+            app:layout_constraintEnd_toEndOf="parent" android:layout_marginEnd="8dp" android:layout_marginRight="8dp"
+            android:layout_marginBottom="4dp"/>
     <ImageView
             android:layout_width="100dp"
             android:layout_height="100dp" app:srcCompat="@drawable/nao_encontrado"
@@ -97,24 +110,25 @@
             android:layout_marginLeft="4dp" android:layout_marginStart="4dp"
             android:layout_marginEnd="8dp"
             app:layout_constraintEnd_toStartOf="@+id/textView_Preco" android:layout_marginRight="8dp"
-            app:layout_constraintTop_toBottomOf="@+id/imageView8" android:layout_marginTop="16dp"
+            app:layout_constraintTop_toBottomOf="@+id/imageView8" android:layout_marginTop="8dp"
             android:textStyle="bold"/>
     <TextView
             android:text="Marca"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/textView_Marca" android:textSize="20sp"
-            android:layout_marginTop="4dp" app:layout_constraintTop_toBottomOf="@+id/textView_Nome"
             app:layout_constraintStart_toEndOf="@+id/imageView_Produto" android:layout_marginStart="4dp"
-            android:layout_marginLeft="4dp"/>
+            android:layout_marginLeft="4dp"
+            app:layout_constraintTop_toBottomOf="@+id/textView_Nome"
+            app:layout_constraintBottom_toTopOf="@+id/textView_Detalhes"/>
     <TextView
             android:text="Detalhes"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/textView_Detalhes" android:layout_marginTop="4dp"
-            app:layout_constraintTop_toBottomOf="@+id/textView_Marca"
+            android:id="@+id/textView_Detalhes"
             app:layout_constraintStart_toEndOf="@+id/imageView_Produto" android:layout_marginLeft="4dp"
-            android:layout_marginStart="4dp"/>
+            android:layout_marginStart="4dp" app:layout_constraintBottom_toTopOf="@+id/imageView7"
+            android:layout_marginBottom="8dp"/>
     <ImageView
             android:layout_width="30dp"
             android:layout_height="30dp" app:srcCompat="@mipmap/ic_launcher"
@@ -123,15 +137,15 @@
             android:layout_marginEnd="8dp" android:layout_marginRight="8dp"
             app:layout_constraintBottom_toTopOf="@+id/imageView7" android:layout_marginBottom="8dp"/>
     <android.support.v7.widget.RecyclerView
-            android:layout_width="395dp"
+            android:layout_width="0dp"
             android:layout_height="0dp"
             app:layout_constraintStart_toStartOf="parent" android:layout_marginLeft="8dp"
-            android:layout_marginStart="8dp" app:layout_constraintEnd_toEndOf="parent" android:layout_marginEnd="8dp"
-            android:layout_marginRight="8dp"
+            android:layout_marginStart="8dp"
             app:layout_constraintBottom_toBottomOf="parent"
-            android:id="@+id/RecyclerView_ProdutosRelacionados" app:layout_constraintHorizontal_bias="0.0"
+            android:id="@+id/RecyclerView_ProdutosRelacionados"
             app:layout_constraintTop_toBottomOf="@+id/imageView7" app:layout_constraintVertical_bias="0.0"
-            android:layout_marginTop="8dp" android:layout_marginBottom="8dp"/>
+            android:layout_marginTop="8dp" app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginEnd="8dp" android:layout_marginRight="8dp"/>
     <ImageView
             android:layout_width="0dp"
             android:layout_height="1dp" app:srcCompat="@color/colorPrimary"
@@ -148,4 +162,10 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintTop_toBottomOf="@+id/constraintLayout"/>
+    <ImageView
+            android:layout_width="50dp"
+            android:layout_height="50dp" app:srcCompat="@drawable/voltar_laranja"
+            android:id="@+id/imageView_Voltar" android:layout_marginTop="8dp"
+            app:layout_constraintTop_toTopOf="parent" app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginLeft="8dp" android:layout_marginStart="8dp"/>
 </android.support.constraint.ConstraintLayout>

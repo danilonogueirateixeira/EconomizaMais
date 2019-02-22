@@ -1101,6 +1101,8 @@ drawable notify_panel_notification_icon_bg
 drawable produtos_icone
 drawable tooltip_frame_dark
 drawable tooltip_frame_light
+drawable voltar
+drawable voltar_laranja
 id ALT
 id CTRL
 id FUNCTION
@@ -1208,6 +1210,7 @@ id imageView_Ligar
 id imageView_LogoLoja
 id imageView_Produto
 id imageView_Rotas
+id imageView_Voltar
 id info
 id invisible
 id italic
@@ -1547,9 +1550,11 @@ string fab_transformation_sheet_behavior
 string go_to_settings
 string hide_bottom_view_on_scroll_behavior
 string more_info_dialog
+string more_info_dialog_ligacao
 string mtrl_chip_close_icon_content_description
 string nao
 string never_ask_again_dialog
+string never_ask_again_dialog_ligacao
 string password_toggle_content_description
 string path_password_eye
 string path_password_eye_mask_strike_through

@@ -8,26 +8,28 @@
     <string name="pesquisar_Produtos">Pesquisar Produtos</string>
     <string name="never_ask_again_dialog">Para que possamos mostrar os melhores estabelecimentos através do app é
         preciso que acesse as configurações do sistema e conceda a permissão. Caso concorde, clique no botão de ir para
-        as configurações.
+        as configurações e altere manualmente.
     </string>
     <string name="go_to_settings">Ir para as configurações!</string>
     <string name="permission_dialog_title">Permissão</string>
     <string name="more_info_dialog">Para que possamos mostrar os melhores estabelecimentos através do app é preciso que
-        nos conceda permissão.
-    </string>
+        nos conceda a permissão.</string>
     <string name="sim">Sim</string>
     <string name="nao">Não</string>
 
     <string name="conexao_dialog_titulo">Não foi possível conectar ao servidor</string>
     <string name="conexao_primeira_abertura">Verifique sua conexão e tente novamente.</string>
     <string name="conexao_segunda_abertura">Verifique sua conexão e tente novamente, ou utilize os dados existentes
-        (podem não estar atualizados).
-    </string>
+        (podem não estar atualizados).</string>
     <string name="tentar_novamente">Tentar Novamente</string>
     <string name="sair">Sair</string>
     <string name="utilizar_dados_existentes">Utilizar Dados Existentes</string>
     <string name="pesquisar_produtos">Pesquisar Produtos</string>
     <string name="pesquisar_lojas">Pesquisar Lojas</string>
 
+    <string name="never_ask_again_dialog_ligacao">Para que possamos realizar a ligação é necessário que nos conceda a permissão. Caso concorde, clique no botão de ir para
+        as configurações e altere manualmente.
+    </string>
+    <string name="more_info_dialog_ligacao">Para que possamos realizar a ligação é necessário que nos conceda a permissão.</string>
 
 </resources>

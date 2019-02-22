@@ -41,6 +41,7 @@ class MainController{
         return listaOriginal
     }
 
+    // Recupera o ID do produto Clicado no Autocomplete
     fun recuperaId(produtoClicado: String):Produto{
         var produto: Produto? = null
 
@@ -56,13 +57,12 @@ class MainController{
         return produto!!
     }
 
-
+    // Recupera o clique do produto na lista
     fun cliqueProduto(listaProdutos: MutableList<Produto>, listaLojas: MutableList<Loja>, produtoClicado: Produto,latitude: Double, longitude: Double, contexto: Context){
 
         for (i in 0 until listaProdutos.size){
 
             if(produtoClicado.equals(listaProdutos[i])){
-                Log.i("TESTE dentro do IF", listaProdutos[i].toString())
 
                 enviarDetalhes(contexto, listaProdutos[i],listaProdutos, listaLojas, latitude, longitude)
 
@@ -73,9 +73,8 @@ class MainController{
 
     }
 
-
+    // Envia dados para tela e detalhes
     fun enviarDetalhes(contexto: Context, produto: Produto, produtos: MutableList<Produto>, lojas: MutableList<Loja>, latitude: Double, longitude: Double){
-
 
         var listaP : ArrayList<Produto> = produtos as ArrayList<Produto>
         val produtos = Bundle()
@@ -84,8 +83,6 @@ class MainController{
         var listaL: ArrayList<Loja> = lojas as ArrayList<Loja>
         val lojas = Bundle()
         lojas.putParcelableArrayList("lojas", listaL)
-
-
 
         // Inicia a Main e envia as Coordenadas
         var intent = Intent(contexto, DetalhesProdutoActivity::class.java)

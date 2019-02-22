@@ -2,9 +2,11 @@ package br.com.economizamais.code.controller.detalhes_produto
 import android.content.Context
 import android.support.v7.widget.RecyclerView
 import android.support.v7.widget.RecyclerView.Adapter
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import br.com.economizamais.R
 import br.com.economizamais.code.controller.main.FormataDados
 import br.com.economizamais.code.model.entities.Produto
@@ -17,10 +19,6 @@ class DetalhesProdutoListAdapter(private val produtos: List<Produto>,
 ) : Adapter<DetalhesProdutoListAdapter.ViewHolder>() {
 
 
-
-
-
-
     override fun onBindViewHolder(p0: ViewHolder, position: Int) {
         val produto = produtos[position]
         p0?.let {
@@ -31,6 +29,9 @@ class DetalhesProdutoListAdapter(private val produtos: List<Produto>,
             Glide.with(context).load("http://res.cloudinary.com/hprhniuxo/image/upload/t_media_lib_thumb/"+produto.image).into(it.imagem)
 
 
+            it.adicionar.setOnClickListener {
+                Log.i("TESTE CLIQUE CARRO", produtos[position].toString())
+            }
         }
          }
 
@@ -50,6 +51,8 @@ class DetalhesProdutoListAdapter(private val produtos: List<Produto>,
         val descricao = itemView.textView_Descricao
         val preco = itemView.textView_Preco
         val imagem = itemView.imageView_Produto
+
+        val adicionar = itemView.imageView_Adicionar
 
 
 
