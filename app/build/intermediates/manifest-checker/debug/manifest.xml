@@ -30,6 +30,15 @@
         android:testOnly="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true" >
+        <uses-library
+            android:name="org.apache.http.legacy"
+            android:required="false" />
+
+        <activity
+            android:name="br.com.economizamais.code.view.DetalhesLojaActivity"
+            android:windowSoftInputMode="stateHidden" >
+        </activity>
+
         <meta-data
             android:name="com.google.android.geo.API_KEY"
             android:value="AIzaSyCW8vYSyllgyRu2d14QxLgcNSdRAjUi8yQ" />

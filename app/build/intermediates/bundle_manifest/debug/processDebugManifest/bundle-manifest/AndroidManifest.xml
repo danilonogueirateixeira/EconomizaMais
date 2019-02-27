@@ -30,6 +30,15 @@
         android:testOnly="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true" >
+        <uses-library
+            android:name="org.apache.http.legacy"
+            android:required="false" />
+
+        <activity
+            android:name="br.com.economizamais.code.view.DetalhesLojaActivity"
+            android:windowSoftInputMode="stateHidden" >
+        </activity>
+
         <meta-data
             android:name="com.google.android.geo.API_KEY"
             android:value="AIzaSyCW8vYSyllgyRu2d14QxLgcNSdRAjUi8yQ" />
@@ -79,11 +88,6 @@
         <meta-data
             android:name="android.support.VERSION"
             android:value="26.1.0" />
-
-        <provider
-            android:name="com.android.tools.ir.server.InstantRunContentProvider"
-            android:authorities="br.com.economizamais.com.android.tools.ir.server.InstantRunContentProvider"
-            android:multiprocess="true" />
     </application>
 
 </manifest>

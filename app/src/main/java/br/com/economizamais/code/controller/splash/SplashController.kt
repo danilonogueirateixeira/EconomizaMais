@@ -32,6 +32,13 @@ import android.support.v4.content.ContextCompat
 import android.view.View
 import com.google.android.gms.location.FusedLocationProviderClient
 import com.google.android.gms.location.LocationServices
+import android.location.LocationManager
+import android.content.Context.LOCATION_SERVICE
+import android.support.v4.content.ContextCompat.getSystemService
+import android.util.Log
+import android.support.v4.app.ActivityCompat.startActivityForResult
+
+
 
 
 class SplashController{
@@ -217,30 +224,52 @@ class SplashController{
     @SuppressLint("MissingPermission")
     fun obterLocalizacao(contexto: Context){
 
-        // Inicia os bancos de dados e trás todos os produtos
-        var databaseProduto: ProdutoDatabase? = ProdutoDatabase.getInstance(contexto)
-        GetAllProdutoTask(databaseProduto).execute()
-        var databaseLoja: LojaDatabase? = LojaDatabase.getInstance(contexto)
-        GetAllLojaTask(databaseLoja).execute()
+        var mLocationManager = contexto.getSystemService(LOCATION_SERVICE) as LocationManager
 
-        // Buscar a localização atual do dispositivo
-        lateinit var fusedLocationClient: FusedLocationProviderClient
-        fusedLocationClient = LocationServices.getFusedLocationProviderClient(contexto)
+        // getting GPS status
+        val isGPSEnabled = mLocationManager.isProviderEnabled(LocationManager.GPS_PROVIDER)
 
-        // Recupera a Latitude e Longitude
-        fusedLocationClient.lastLocation
-            .addOnSuccessListener { location: android.location.Location? ->
-                var latitude = location?.latitude!!
-                var longitude = location?.longitude!!
 
-                // Inicia a Main e envia as Coordenadas
-                var intent = Intent(contexto, MainActivity::class.java)
-                intent.putExtra("latitude", latitude)
-                intent.putExtra("longitude", longitude)
-                contexto.startActivity(intent)
-                (contexto as SplashActivity).finish()
 
-            }
+
+        if(!isGPSEnabled) {
+            Log.d("letsSee", "GPS IS OFF")
+            val intent = Intent(Settings.ACTION_LOCATION_SOURCE_SETTINGS)
+
+            contexto.startActivity(intent)
+            (contexto as SplashActivity).finish()
+
+
+        }else{
+            Log.d("letsSee", "GPS IS ON")
+
+            // Inicia os bancos de dados e trás todos os produtos
+            var databaseProduto: ProdutoDatabase? = ProdutoDatabase.getInstance(contexto)
+            GetAllProdutoTask(databaseProduto).execute()
+            var databaseLoja: LojaDatabase? = LojaDatabase.getInstance(contexto)
+            GetAllLojaTask(databaseLoja).execute()
+
+            // Buscar a localização atual do dispositivo
+            var fusedLocationClient: FusedLocationProviderClient = LocationServices.getFusedLocationProviderClient(contexto)
+
+            // Recupera a Latitude e Longitude
+            fusedLocationClient.lastLocation
+                .addOnSuccessListener { location: android.location.Location? ->
+                    var latitude = location?.latitude!!
+                    var longitude = location?.longitude!!
+
+                    // Inicia a Main e envia as Coordenadas
+                    var intent = Intent(contexto, MainActivity::class.java)
+                    intent.putExtra("latitude", latitude)
+                    intent.putExtra("longitude", longitude)
+                    contexto.startActivity(intent)
+                    (contexto as SplashActivity).finish()
+
+                }
+
+        }
+
+
     }
 
 
@@ -256,15 +285,25 @@ class SplashController{
 
     // Exibe o componente
     fun showView(view: View) {
-        View.VISIBLE
-    }
+        if (view.visibility == View.INVISIBLE){
+            View.VISIBLE
+        }    }
 
     // Esconde o componente
     fun hideView(view: View) {
-        View.INVISIBLE
+        if (view.visibility == View.VISIBLE){
+            View.INVISIBLE
+        }
     }
 
 
+    fun showHide(view:View) {
+        view.visibility = if (view.visibility == View.VISIBLE){
+            View.INVISIBLE
+        } else{
+            View.VISIBLE
+        }
+    }
 
 
 }

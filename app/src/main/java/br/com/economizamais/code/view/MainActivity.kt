@@ -24,6 +24,7 @@ import br.com.economizamais.code.controller.main.autocomplete.AutoCompleteAdapte
 import br.com.economizamais.code.controller.main.adapter.LojasListAdapter
 import br.com.economizamais.code.controller.database.LojaDatabase
 import br.com.economizamais.code.controller.detalhes_produto.DetalhesProdutoController
+import br.com.economizamais.code.controller.splash.SplashController
 import br.com.economizamais.code.model.entities.Loja
 
 
@@ -37,6 +38,8 @@ var listaLojasTemp: MutableList<Loja> = arrayListOf()
 var listaNomeMarca: MutableList<String> = arrayListOf()
 var listaNomeLoja: MutableList<String> = arrayListOf()
 
+var latitude: Double = 0.0
+var longitude: Double = 0.0
 
 
 
@@ -51,6 +54,12 @@ class MainActivity : AppCompatActivity() {
             // Produtos
             R.id.navigation_produtos -> {
 
+                // Mostra ou Esconde os Itens
+                if (note_list_recyclerview.visibility == View.INVISIBLE) {
+                    SplashController().showHide(note_list_recyclerview)
+                    SplashController().showHide(lojas_list_recyclerview)
+                }
+
                 // Preenche a Lista
                 val recyclerView = note_list_recyclerview
                 if (listaProdutos != null) {
@@ -58,6 +67,18 @@ class MainActivity : AppCompatActivity() {
                 }
                 val layoutManager = StaggeredGridLayoutManager(1, StaggeredGridLayoutManager.VERTICAL)
                 recyclerView.layoutManager = layoutManager
+
+                // Adiciona Clique na lista
+                recyclerView.addOnItemClickListener(object: OnItemClickListener {
+                    override fun onItemClicked(position: Int, view: View) {
+
+                        Log.i("TESTE POSITION", position.toString())
+                        Log.i("TESTE POSITION", listaProdutos[position].toString())
+
+                        MainController().cliqueProduto(listaProdutos, listaLojas, listaProdutos[position],latitude, longitude, this@MainActivity )
+                    }
+                })
+
 
                 // Prenche o AutoComplete
                 val adapter = AutoCompleteAdapter(
@@ -76,13 +97,38 @@ class MainActivity : AppCompatActivity() {
             // Lojas
             R.id.navigation_lojas -> {
 
+                if (lojas_list_recyclerview.visibility == View.INVISIBLE) {
+
+                    SplashController().showHide(lojas_list_recyclerview)
+                    SplashController().showHide(note_list_recyclerview)
+                }
                 // Preenche a Lista
-                val recyclerView = note_list_recyclerview
+                val recyclerViewLojas = lojas_list_recyclerview
                 if (listaLojas != null) {
-                    recyclerView.adapter = LojasListAdapter(listaLojas!!, this)
+                    recyclerViewLojas.adapter = LojasListAdapter(listaLojas!!, this)
                 }
                 val layoutManager = StaggeredGridLayoutManager(1, StaggeredGridLayoutManager.VERTICAL)
-                recyclerView.layoutManager = layoutManager
+                recyclerViewLojas.layoutManager = layoutManager
+
+                recyclerViewLojas.addOnItemClickListenerLoja(object: OnItemClickListenerLoja {
+                    override fun onItemClickedLoja(position: Int, view: View) {
+
+
+                        Log.i("TESTE POSITION", position.toString())
+                        Log.i("TESTE POSITION", listaLojas[position].toString())
+
+                        //val selectedItem = listaProdutos[position].nome+" "+ listaProdutos[position].marca.toString()
+
+                       // MainController().cliqueProduto(listaProdutos, listaLojas, listaProdutos[position],latitude, longitude, this@MainActivity )
+
+                        //recyclerView.adapter!!.getItemId(position)
+
+                        MainController().cliqueLoja(listaProdutos, listaLojas, listaLojas[position], latitude, longitude, this@MainActivity )
+
+                    }
+                })
+
+
 
                 // Prenche o AutoComplete
                 val adapter = AutoCompleteAdapter(
@@ -106,8 +152,11 @@ class MainActivity : AppCompatActivity() {
                     val selectedItem = parent.getItemAtPosition(position).toString()
 
 
+                    var loja = MainController().recuperaIdLoja(selectedItem)
 
-                    Log.i("TESTE LOJA", selectedItem)
+                    Log.i("TESTE LOJA", loja.toString())
+
+                    MainController().cliqueLoja(listaProdutos, listaLojas, loja, latitude, longitude, this )
 
                 }
 
@@ -116,6 +165,11 @@ class MainActivity : AppCompatActivity() {
 
             // Listas
             R.id.navigation_listas -> {
+
+
+                    SplashController().showHide(note_list_recyclerview)
+                    SplashController().showHide(lojas_list_recyclerview)
+
 
                 return@OnNavigationItemSelectedListener true
             }
@@ -135,8 +189,8 @@ class MainActivity : AppCompatActivity() {
 
         // Recebe os dados do Splash
         var intent: Intent = getIntent()
-        var latitude: Double = intent.getSerializableExtra("latitude") as Double
-        var longitude: Double = intent.getSerializableExtra("longitude") as Double
+        latitude = intent.getSerializableExtra("latitude") as Double
+        longitude  = intent.getSerializableExtra("longitude") as Double
 
         // Recupera a distanca para todas as lojas
         for(i in 0 until  listaLojas!!.size ){
@@ -243,12 +297,12 @@ class MainActivity : AppCompatActivity() {
 
 
         // Altera o foco para o AutoComplete
-        pesquisaprodutos_autocomplete.onFocusChangeListener = View.OnFocusChangeListener{
-                view, b ->
-            if(b){
-                pesquisaprodutos_autocomplete.showDropDown()
-            }
-        }
+//        pesquisaprodutos_autocomplete.onFocusChangeListener = View.OnFocusChangeListener{
+//                view, b ->
+//            if(b){
+//                pesquisaprodutos_autocomplete.showDropDown()
+//            }
+//        }
     }
 
 
@@ -271,6 +325,26 @@ class MainActivity : AppCompatActivity() {
                 p0?.setOnClickListener({
                     val holder = getChildViewHolder(p0)
                     onClickListener.onItemClicked(holder.adapterPosition, p0)
+                })
+            }
+        })
+    }
+
+
+    interface OnItemClickListenerLoja {
+        fun onItemClickedLoja(position: Int, view: View)
+    }
+
+    fun RecyclerView.addOnItemClickListenerLoja(onClickListenerLoja: OnItemClickListenerLoja) {
+        this.addOnChildAttachStateChangeListener(object: RecyclerView.OnChildAttachStateChangeListener {
+            override fun onChildViewDetachedFromWindow(p0: View) {
+                p0?.setOnClickListener(null)
+            }
+
+            override fun onChildViewAttachedToWindow(p0: View) {
+                p0?.setOnClickListener({
+                    val holder = getChildViewHolder(p0)
+                    onClickListenerLoja.onItemClickedLoja(holder.adapterPosition, p0)
                 })
             }
         })

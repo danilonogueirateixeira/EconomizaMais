@@ -6,7 +6,7 @@
 
     <android.support.constraint.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="75dp" android:background="@color/colorAccent"
+            android:layout_height="85dp" android:background="@color/colorAccent"
             android:id="@+id/constraintLayout"
             app:layout_constraintTop_toBottomOf="@+id/imageView_LogoLoja" app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
@@ -17,7 +17,7 @@
             android:text="Preco"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/textView_Preco" android:textSize="36sp"
+            android:id="@+id/textView_Preco" android:textSize="30sp"
             android:textColor="@android:color/holo_green_dark"
             android:layout_marginEnd="8dp"
             app:layout_constraintEnd_toEndOf="parent" android:layout_marginRight="8dp"
@@ -114,21 +114,24 @@
             android:textStyle="bold"/>
     <TextView
             android:text="Marca"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:id="@+id/textView_Marca" android:textSize="20sp"
             app:layout_constraintStart_toEndOf="@+id/imageView_Produto" android:layout_marginStart="4dp"
             android:layout_marginLeft="4dp"
             app:layout_constraintTop_toBottomOf="@+id/textView_Nome"
-            app:layout_constraintBottom_toTopOf="@+id/textView_Detalhes"/>
+            app:layout_constraintBottom_toTopOf="@+id/textView_Detalhes"
+            app:layout_constraintEnd_toStartOf="@+id/textView_Preco" android:layout_marginEnd="8dp"
+            android:layout_marginRight="8dp"/>
     <TextView
             android:text="Detalhes"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:id="@+id/textView_Detalhes"
             app:layout_constraintStart_toEndOf="@+id/imageView_Produto" android:layout_marginLeft="4dp"
             android:layout_marginStart="4dp" app:layout_constraintBottom_toTopOf="@+id/imageView7"
-            android:layout_marginBottom="8dp"/>
+            android:layout_marginBottom="8dp" app:layout_constraintEnd_toStartOf="@+id/textView_Preco"
+            android:layout_marginEnd="8dp" android:layout_marginRight="8dp"/>
     <ImageView
             android:layout_width="30dp"
             android:layout_height="30dp" app:srcCompat="@mipmap/ic_launcher"

@@ -6,7 +6,10 @@ import android.app.AlertDialog
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.content.pm.PackageManager
+import android.location.LocationManager
 import android.os.Handler
+import android.provider.Settings
+import android.util.Log
 import br.com.economizamais.R
 import br.com.economizamais.code.controller.splash.SplashController
 import kotlinx.android.synthetic.main.activity_splash.*
@@ -30,6 +33,8 @@ class SplashActivity : AppCompatActivity() {
                 // Permissão aceita
                 if (grantResults.isNotEmpty()
                     && grantResults.first() == PackageManager.PERMISSION_GRANTED) {
+
+
 
                     // Tenta acessar o servidor
                     SplashController().getLojasServidor(this@SplashActivity, this@SplashActivity)
@@ -87,6 +92,9 @@ class SplashActivity : AppCompatActivity() {
             setPositiveButton(R.string.tentar_novamente) { _, _ -> SplashController().getLojasServidor(this@SplashActivity, this@SplashActivity) }
             setNegativeButton(R.string.utilizar_dados_existentes) { d, _ ->
 
+
+
+
                 // Inicia a abertura da main com os dados armazenados localmente
                 SplashController().obterLocalizacao(this@SplashActivity)
             }
@@ -98,6 +106,16 @@ class SplashActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(br.com.economizamais.R.layout.activity_splash)
+
+
+
+
+
+
+
+        //Intent intent = new Intent(Settings.ACTION_LOCATION_SOURCE_SETTINGS);
+
+        startActivityForResult(intent, 1);
 
         // Esconde a progressBar
         SplashController().hideView(splash_progressbar)
