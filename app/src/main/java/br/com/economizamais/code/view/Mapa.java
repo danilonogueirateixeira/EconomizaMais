@@ -3,6 +3,7 @@ package br.com.economizamais.code.view;
 import android.Manifest;
 import android.app.Activity;
 import android.app.ProgressDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.graphics.Color;
@@ -83,8 +84,12 @@ public class Mapa extends Activity implements OnMapReadyCallback, DirectionFinde
     public void onDirectionFinderStart() {
 
         // Caixa de Diálogo
-        progressDialog = ProgressDialog.show(this, "Aguarde.",
-                "Procurando...", true);
+//        progressDialog = ProgressDialog.show(this, "Aguarde.",
+//                "Procurando...", true);
+
+        createCancelProgressDialog("Carregando", "Por favor, aguarde enquanto encontramos a melhor rota.", "Cancelar");
+
+
 
         if (originMarkers != null) {
             for (Marker marker : originMarkers) {
@@ -104,7 +109,24 @@ public class Mapa extends Activity implements OnMapReadyCallback, DirectionFinde
             }
         }
 
+
     }
+
+    private void createCancelProgressDialog(String title, String message, String buttonText)
+    {
+        progressDialog = new ProgressDialog(this);
+        progressDialog.setTitle(title);
+        progressDialog.setMessage(message);
+        progressDialog.setButton(buttonText, new DialogInterface.OnClickListener()
+        {
+            public void onClick(DialogInterface dialog, int which)
+            {
+                finish();
+            }
+        });
+        progressDialog.show();
+    }
+
 
     @Override
     public void onDirectionFinderSuccess(List<Route> routes) {

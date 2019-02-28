@@ -59,7 +59,7 @@ class DetalhesLojaActivity : AppCompatActivity() {
         textView_Cidade.text = loja.cidade
         textView_Estado.text = "- "+ loja.uf
         textView_Distancia.text = FormataDados().formataKm(loja.distancia)
-        Glide.with(this).load("http://res.cloudinary.com/hprhniuxo/image/upload/t_media_lib_thumb/"+loja.image).into(imageView_LogoLoja)
+        Glide.with(this).load("http://res.cloudinary.com/hprhniuxo/image/upload/t_media_lib_thumb/"+loja.image).into(imageView_LojaTeste)
 
 
         // Recupera o telefone da loja para ligação

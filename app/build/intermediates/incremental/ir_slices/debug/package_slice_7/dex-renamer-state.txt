@@ -1,4 +1,4 @@
-#Tue Feb 26 00:04:06 BRT 2019
+#Wed Feb 27 00:26:25 BRT 2019
 base.0=/Users/danilo/Desktop/OneDrive/Projetos/2019/EconomizaMais/app/build/intermediates/transforms/dexMerger/debug/7
 path.0=classes.dex
 renamed.0=classes.dex

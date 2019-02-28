@@ -3,6 +3,7 @@ package br.com.economizamais.code.view
 import android.Manifest
 import android.annotation.SuppressLint
 import android.app.AlertDialog
+import android.content.Intent
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.content.pm.PackageManager
@@ -37,7 +38,7 @@ class SplashActivity : AppCompatActivity() {
 
 
                     // Tenta acessar o servidor
-                    SplashController().getLojasServidor(this@SplashActivity, this@SplashActivity)
+                    SplashController().getLojasServidor(this@SplashActivity, this@SplashActivity, latitude, longitude)
 
                 // Opção de não mostrar novamente, selecionada
                 } else if (!shouldShowRequestPermissionRationale(Manifest.permission.ACCESS_FINE_LOCATION)) {
@@ -79,7 +80,7 @@ class SplashActivity : AppCompatActivity() {
         AlertDialog.Builder(this).apply {
             setMessage(R.string.conexao_primeira_abertura)
             setTitle(R.string.conexao_dialog_titulo)
-            setPositiveButton(R.string.tentar_novamente) { _, _ -> SplashController().getLojasServidor(this@SplashActivity, this@SplashActivity) }
+            setPositiveButton(R.string.tentar_novamente) { _, _ -> SplashController().getLojasServidor(this@SplashActivity, this@SplashActivity, latitude, longitude) }
             setNegativeButton(R.string.sair) { d, _ -> finish() }
         }.show()
     }
@@ -89,14 +90,14 @@ class SplashActivity : AppCompatActivity() {
         AlertDialog.Builder(this).apply {
             setMessage(R.string.conexao_segunda_abertura)
             setTitle(R.string.conexao_dialog_titulo)
-            setPositiveButton(R.string.tentar_novamente) { _, _ -> SplashController().getLojasServidor(this@SplashActivity, this@SplashActivity) }
+            setPositiveButton(R.string.tentar_novamente) { _, _ -> SplashController().getLojasServidor(this@SplashActivity, this@SplashActivity, latitude, longitude) }
             setNegativeButton(R.string.utilizar_dados_existentes) { d, _ ->
 
 
 
 
                 // Inicia a abertura da main com os dados armazenados localmente
-                SplashController().obterLocalizacao(this@SplashActivity)
+                SplashController().obterLocalizacao(this@SplashActivity, latitude, longitude)
             }
         }.show()
     }
@@ -109,16 +110,22 @@ class SplashActivity : AppCompatActivity() {
 
 
 
+        // Recebe os dados do Splash
+        var intent: Intent = getIntent()
+        latitude = intent.getSerializableExtra("latitude") as Double
+        longitude  = intent.getSerializableExtra("longitude") as Double
 
+        Log.i("TESTE Splash latitude",""+latitude)
+        Log.i("TESTE Splash longitude",""+longitude)
 
 
 
         //Intent intent = new Intent(Settings.ACTION_LOCATION_SOURCE_SETTINGS);
 
-        startActivityForResult(intent, 1);
+        //startActivityForResult(intent, 1);
 
         // Esconde a progressBar
-        SplashController().hideView(splash_progressbar)
+        //SplashController().hideView(splash_progressbar)
 
 
 
@@ -126,7 +133,7 @@ class SplashActivity : AppCompatActivity() {
         Handler().postDelayed({
 
             // Verifica permissão
-            SplashController().getMinhaLocalizacao(this, this)
+            SplashController().getMinhaLocalizacao(this, this, latitude, longitude)
 
         }, 1000)
 
@@ -134,7 +141,7 @@ class SplashActivity : AppCompatActivity() {
         Handler().postDelayed({
 
             // Mostra a progressBar
-            SplashController().showView(splash_progressbar)
+            //SplashController().showView(splash_progressbar)
 
         }, 2000)
 

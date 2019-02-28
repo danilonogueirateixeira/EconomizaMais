@@ -456,6 +456,10 @@
         "source": "/Users/danilo/.gradle/caches/transforms-1/files-1.1/design-28.0.0.aar/0508d9a535004895723dc472fa8b45f1/res/color/mtrl_tabs_colored_ripple_color.xml"
     },
     {
+        "merged": "/Users/danilo/Desktop/OneDrive/Projetos/2019/EconomizaMais/app/build/intermediates/res/merged/debug/layout_activity_teste.xml.flat",
+        "source": "/Users/danilo/Desktop/OneDrive/Projetos/2019/EconomizaMais/app/src/main/res/layout/activity_teste.xml"
+    },
+    {
         "merged": "/Users/danilo/Desktop/OneDrive/Projetos/2019/EconomizaMais/app/build/intermediates/res/merged/debug/drawable_ic_notifications_black_24dp.xml.flat",
         "source": "/Users/danilo/Desktop/OneDrive/Projetos/2019/EconomizaMais/app/src/main/res/drawable/ic_notifications_black_24dp.xml"
     },

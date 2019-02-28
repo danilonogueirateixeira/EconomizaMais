@@ -1,5 +1,5 @@
 #Internal package file, do not edit.
-#Tue Feb 26 00:10:26 BRT 2019
+#Wed Feb 27 22:53:58 BRT 2019
 0.baseType=DIRECTORY
 0.base=/Users/danilo/Desktop/OneDrive/Projetos/2019/EconomizaMais/app/build/intermediates/dex/debug/mergeDexDebug/out
 0.path=classes.dex

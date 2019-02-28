@@ -37,6 +37,11 @@ import android.content.Context.LOCATION_SERVICE
 import android.support.v4.content.ContextCompat.getSystemService
 import android.util.Log
 import android.support.v4.app.ActivityCompat.startActivityForResult
+import com.google.android.gms.location.LocationAvailability
+import com.google.android.gms.location.LocationResult
+import com.google.android.gms.location.LocationCallback
+
+
 
 
 
@@ -47,7 +52,7 @@ class SplashController{
 
     // Resposável pela primeira verificação de permissões
     @SuppressLint("NewApi")
-    fun getMinhaLocalizacao(contexto: Context, contextoWrapper: ContextWrapper) {
+    fun getMinhaLocalizacao(contexto: Context, contextoWrapper: ContextWrapper, latitude: Double, longitude: Double) {
 
         // Se a permissão estiver negada
         if (ContextCompat.checkSelfPermission(contexto, Manifest.permission.ACCESS_FINE_LOCATION)
@@ -66,7 +71,7 @@ class SplashController{
         } else {
 
             // Inicia a conexão com o servidor de lojas
-            SplashController().getLojasServidor(contexto, contextoWrapper)
+            SplashController().getLojasServidor(contexto, contextoWrapper, latitude, longitude )
         }
     }
 
@@ -105,7 +110,7 @@ class SplashController{
     var contadorLojas: Int = 0
 
     // Conexão com servidor e armazenamento interno dos dados das lojas
-    fun getLojasServidor(contexto: Context, contextoWrapper: ContextWrapper) {
+    fun getLojasServidor(contexto: Context, contextoWrapper: ContextWrapper, latitude: Double, longitude: Double) {
 
         // Instância do Banco de Dados
         var database: LojaDatabase? = LojaDatabase.getInstance(contexto)
@@ -122,7 +127,7 @@ class SplashController{
 
                 // Se Contador menor que 3 é realizada uma nova chamada
                 if (contadorLojas<3){
-                    getLojasServidor(contexto, contextoWrapper)
+                    getLojasServidor(contexto, contextoWrapper, latitude, longitude)
                     contadorLojas = contadorLojas+1
 
                 // Se contador maior que 3
@@ -153,7 +158,7 @@ class SplashController{
                 }
 
                 // Inicia a conexão com o servidor de produtos
-                getProdutosServidor(contexto, contextoWrapper)
+                getProdutosServidor(contexto, contextoWrapper, latitude, longitude)
             }
         })
     }
@@ -162,7 +167,7 @@ class SplashController{
     var contadorProdutos: Int = 0
 
     // Conexão com servidor e armazenamento interno dos dados dos produtos
-    fun getProdutosServidor(contexto: Context,  contextoWrapper: ContextWrapper) {
+    fun getProdutosServidor(contexto: Context,  contextoWrapper: ContextWrapper, latitude: Double, longitude: Double) {
 
         // Instância do Banco de Dados
         var database: ProdutoDatabase? = ProdutoDatabase.getInstance(contexto)
@@ -179,7 +184,7 @@ class SplashController{
 
                 // Se Contador menor que 3 é realizada uma nova chamada
                 if (contadorProdutos<3){
-                    getProdutosServidor(contexto, contextoWrapper)
+                    getProdutosServidor(contexto, contextoWrapper, latitude, longitude)
                     contadorProdutos = contadorProdutos+1
 
                 // Se contador maior que 3
@@ -210,7 +215,7 @@ class SplashController{
                 }
 
                 // Inicia a recuperação da localização atual e abertura da Main
-                obterLocalizacao(contexto)
+                obterLocalizacao(contexto, latitude, longitude)
 
             }
         })
@@ -222,7 +227,7 @@ class SplashController{
 
     // Resposável por recuperar a ultima localização conhecida do aparelho e iniciar a tela Main
     @SuppressLint("MissingPermission")
-    fun obterLocalizacao(contexto: Context){
+    fun obterLocalizacao(contexto: Context, latitude: Double, longitude: Double){
 
         var mLocationManager = contexto.getSystemService(LOCATION_SERVICE) as LocationManager
 
@@ -233,6 +238,8 @@ class SplashController{
 
 
         if(!isGPSEnabled) {
+
+
             Log.d("letsSee", "GPS IS OFF")
             val intent = Intent(Settings.ACTION_LOCATION_SOURCE_SETTINGS)
 
@@ -240,7 +247,7 @@ class SplashController{
             (contexto as SplashActivity).finish()
 
 
-        }else{
+        }else {
             Log.d("letsSee", "GPS IS ON")
 
             // Inicia os bancos de dados e trás todos os produtos
@@ -249,14 +256,16 @@ class SplashController{
             var databaseLoja: LojaDatabase? = LojaDatabase.getInstance(contexto)
             GetAllLojaTask(databaseLoja).execute()
 
-            // Buscar a localização atual do dispositivo
-            var fusedLocationClient: FusedLocationProviderClient = LocationServices.getFusedLocationProviderClient(contexto)
+//            // Buscar a localização atual do dispositivo
+//            var fusedLocationClient: FusedLocationProviderClient = LocationServices.getFusedLocationProviderClient(contexto)
+//
+//
+//            // Recupera a Latitude e Longitude
+//            fusedLocationClient.lastLocation
+//                .addOnSuccessListener { location: android.location.Location? ->
+//                    var latitude = location?.latitude!!
+//                    var longitude = location?.longitude!!
 
-            // Recupera a Latitude e Longitude
-            fusedLocationClient.lastLocation
-                .addOnSuccessListener { location: android.location.Location? ->
-                    var latitude = location?.latitude!!
-                    var longitude = location?.longitude!!
 
                     // Inicia a Main e envia as Coordenadas
                     var intent = Intent(contexto, MainActivity::class.java)
@@ -265,9 +274,10 @@ class SplashController{
                     contexto.startActivity(intent)
                     (contexto as SplashActivity).finish()
 
-                }
+
 
         }
+
 
 
     }
@@ -304,6 +314,5 @@ class SplashController{
             View.VISIBLE
         }
     }
-
-
 }
+

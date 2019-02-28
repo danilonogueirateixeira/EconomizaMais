@@ -1,9 +1,9 @@
 -- Merging decision tree log ---
 manifest
-ADDED from /Users/danilo/Desktop/OneDrive/Projetos/2019/EconomizaMais/app/src/main/AndroidManifest.xml:2:1-63:12
-INJECTED from /Users/danilo/Desktop/OneDrive/Projetos/2019/EconomizaMais/app/src/main/AndroidManifest.xml:2:1-63:12
-INJECTED from /Users/danilo/Desktop/OneDrive/Projetos/2019/EconomizaMais/app/src/main/AndroidManifest.xml:2:1-63:12
-INJECTED from /Users/danilo/Desktop/OneDrive/Projetos/2019/EconomizaMais/app/src/main/AndroidManifest.xml:2:1-63:12
+ADDED from /Users/danilo/Desktop/OneDrive/Projetos/2019/EconomizaMais/app/src/main/AndroidManifest.xml:2:1-71:12
+INJECTED from /Users/danilo/Desktop/OneDrive/Projetos/2019/EconomizaMais/app/src/main/AndroidManifest.xml:2:1-71:12
+INJECTED from /Users/danilo/Desktop/OneDrive/Projetos/2019/EconomizaMais/app/src/main/AndroidManifest.xml:2:1-71:12
+INJECTED from /Users/danilo/Desktop/OneDrive/Projetos/2019/EconomizaMais/app/src/main/AndroidManifest.xml:2:1-71:12
 MERGED from [com.android.support:design:28.0.0] /Users/danilo/.gradle/caches/transforms-1/files-1.1/design-28.0.0.aar/0508d9a535004895723dc472fa8b45f1/AndroidManifest.xml:17:1-24:12
 MERGED from [com.android.support:appcompat-v7:28.0.0] /Users/danilo/.gradle/caches/transforms-1/files-1.1/appcompat-v7-28.0.0.aar/b88a9586145783b43ea78f0df5512ced/AndroidManifest.xml:17:1-22:12
 MERGED from [com.android.support.constraint:constraint-layout:1.1.3] /Users/danilo/.gradle/caches/transforms-1/files-1.1/constraint-layout-1.1.3.aar/1caba16737cbc0c776f167ea4bdd60de/AndroidManifest.xml:2:1-11:12
@@ -15,6 +15,7 @@ MERGED from [com.android.support:recyclerview-v7:28.0.0] /Users/danilo/.gradle/c
 MERGED from [com.android.support:cardview-v7:28.0.0] /Users/danilo/.gradle/caches/transforms-1/files-1.1/cardview-v7-28.0.0.aar/a1691a269d5e72747592f0fac4a6c53b/AndroidManifest.xml:17:1-22:12
 MERGED from [com.google.android.gms:play-services-maps:16.0.0] /Users/danilo/.gradle/caches/transforms-1/files-1.1/play-services-maps-16.0.0.aar/144752efddbed170eda1ebdf466a5a8f/AndroidManifest.xml:17:1-32:12
 MERGED from [com.google.android.gms:play-services-location:16.0.0] /Users/danilo/.gradle/caches/transforms-1/files-1.1/play-services-location-16.0.0.aar/e736ac5b54d84915e1f3a020b086979f/AndroidManifest.xml:2:1-9:12
+MERGED from [com.android.support:multidex:1.0.3] /Users/danilo/.gradle/caches/transforms-1/files-1.1/multidex-1.0.3.aar/ac3edcb6151d98e099f71dd5e76b0439/AndroidManifest.xml:17:1-22:12
 MERGED from [com.google.maps.android:android-maps-utils:0.4.4] /Users/danilo/.gradle/caches/transforms-1/files-1.1/android-maps-utils-0.4.4.aar/27a37dba7e77847ffd5e92ddafe80377/AndroidManifest.xml:2:1-13:12
 MERGED from [com.android.volley:volley:1.1.1] /Users/danilo/.gradle/caches/transforms-1/files-1.1/volley-1.1.1.aar/d5e00ac8f7041021cf7847b65249b8d8/AndroidManifest.xml:2:1-11:12
 MERGED from [com.google.android.gms:play-services-base:16.0.1] /Users/danilo/.gradle/caches/transforms-1/files-1.1/play-services-base-16.0.1.aar/e26281fa54f07eefb022650011282fab/AndroidManifest.xml:17:1-29:12
@@ -49,22 +50,22 @@ MERGED from [com.android.support:documentfile:28.0.0] /Users/danilo/.gradle/cach
 MERGED from [com.android.support:localbroadcastmanager:28.0.0] /Users/danilo/.gradle/caches/transforms-1/files-1.1/localbroadcastmanager-28.0.0.aar/e5fcddc96e130de606225f93c56ce05e/AndroidManifest.xml:17:1-22:12
 MERGED from [com.android.support:print:28.0.0] /Users/danilo/.gradle/caches/transforms-1/files-1.1/print-28.0.0.aar/7a2f2e4a9b09b9eacf0712311c834610/AndroidManifest.xml:17:1-22:12
 MERGED from [com.android.support:interpolator:28.0.0] /Users/danilo/.gradle/caches/transforms-1/files-1.1/interpolator-28.0.0.aar/9e2e2a43d4f0d7b83c91b5cb8b8db6b4/AndroidManifest.xml:17:1-22:12
-INJECTED from /Users/danilo/Desktop/OneDrive/Projetos/2019/EconomizaMais/app/src/main/AndroidManifest.xml:2:1-63:12
-INJECTED from /Users/danilo/Desktop/OneDrive/Projetos/2019/EconomizaMais/app/src/main/AndroidManifest.xml:2:1-63:12
-INJECTED from /Users/danilo/Desktop/OneDrive/Projetos/2019/EconomizaMais/app/src/main/AndroidManifest.xml:2:1-63:12
+INJECTED from /Users/danilo/Desktop/OneDrive/Projetos/2019/EconomizaMais/app/src/main/AndroidManifest.xml:2:1-71:12
+INJECTED from /Users/danilo/Desktop/OneDrive/Projetos/2019/EconomizaMais/app/src/main/AndroidManifest.xml:2:1-71:12
+INJECTED from /Users/danilo/Desktop/OneDrive/Projetos/2019/EconomizaMais/app/src/main/AndroidManifest.xml:2:1-71:12
 	package
 		ADDED from /Users/danilo/Desktop/OneDrive/Projetos/2019/EconomizaMais/app/src/main/AndroidManifest.xml:4:11-41
 		INJECTED from /Users/danilo/Desktop/OneDrive/Projetos/2019/EconomizaMais/app/src/main/AndroidManifest.xml
 		INJECTED from /Users/danilo/Desktop/OneDrive/Projetos/2019/EconomizaMais/app/src/main/AndroidManifest.xml
 	android:versionName
 		INJECTED from /Users/danilo/Desktop/OneDrive/Projetos/2019/EconomizaMais/app/src/main/AndroidManifest.xml
-		ADDED from /Users/danilo/Desktop/OneDrive/Projetos/2019/EconomizaMais/app/src/main/AndroidManifest.xml:2:1-63:12
+		ADDED from /Users/danilo/Desktop/OneDrive/Projetos/2019/EconomizaMais/app/src/main/AndroidManifest.xml:2:1-71:12
 		INJECTED from /Users/danilo/Desktop/OneDrive/Projetos/2019/EconomizaMais/app/src/main/AndroidManifest.xml
 	xmlns:tools
 		ADDED from /Users/danilo/Desktop/OneDrive/Projetos/2019/EconomizaMais/app/src/main/AndroidManifest.xml:3:11-57
 	android:versionCode
 		INJECTED from /Users/danilo/Desktop/OneDrive/Projetos/2019/EconomizaMais/app/src/main/AndroidManifest.xml
-		ADDED from /Users/danilo/Desktop/OneDrive/Projetos/2019/EconomizaMais/app/src/main/AndroidManifest.xml:2:1-63:12
+		ADDED from /Users/danilo/Desktop/OneDrive/Projetos/2019/EconomizaMais/app/src/main/AndroidManifest.xml:2:1-71:12
 		INJECTED from /Users/danilo/Desktop/OneDrive/Projetos/2019/EconomizaMais/app/src/main/AndroidManifest.xml
 	xmlns:android
 		ADDED from /Users/danilo/Desktop/OneDrive/Projetos/2019/EconomizaMais/app/src/main/AndroidManifest.xml:2:11-69
@@ -83,7 +84,7 @@ ADDED from /Users/danilo/Desktop/OneDrive/Projetos/2019/EconomizaMais/app/src/ma
 	android:name
 		ADDED from /Users/danilo/Desktop/OneDrive/Projetos/2019/EconomizaMais/app/src/main/AndroidManifest.xml:8:22-66
 application
-ADDED from /Users/danilo/Desktop/OneDrive/Projetos/2019/EconomizaMais/app/src/main/AndroidManifest.xml:12:5-61:19
+ADDED from /Users/danilo/Desktop/OneDrive/Projetos/2019/EconomizaMais/app/src/main/AndroidManifest.xml:10:5-69:19
 MERGED from [com.android.support:design:28.0.0] /Users/danilo/.gradle/caches/transforms-1/files-1.1/design-28.0.0.aar/0508d9a535004895723dc472fa8b45f1/AndroidManifest.xml:22:5-20
 MERGED from [com.android.support:design:28.0.0] /Users/danilo/.gradle/caches/transforms-1/files-1.1/design-28.0.0.aar/0508d9a535004895723dc472fa8b45f1/AndroidManifest.xml:22:5-20
 MERGED from [com.android.support.constraint:constraint-layout:1.1.3] /Users/danilo/.gradle/caches/transforms-1/files-1.1/constraint-layout-1.1.3.aar/1caba16737cbc0c776f167ea4bdd60de/AndroidManifest.xml:9:5-20
@@ -117,83 +118,89 @@ MERGED from [com.android.support:versionedparcelable:28.0.0] /Users/danilo/.grad
 	android:appComponentFactory
 		ADDED from [com.android.support:support-compat:28.0.0] /Users/danilo/.gradle/caches/transforms-1/files-1.1/support-compat-28.0.0.aar/74e9b477619898a5c8c5307459531448/AndroidManifest.xml:22:18-91
 	android:supportsRtl
-		ADDED from /Users/danilo/Desktop/OneDrive/Projetos/2019/EconomizaMais/app/src/main/AndroidManifest.xml:19:13-39
-	android:label
-		ADDED from /Users/danilo/Desktop/OneDrive/Projetos/2019/EconomizaMais/app/src/main/AndroidManifest.xml:17:13-45
-	android:roundIcon
-		ADDED from /Users/danilo/Desktop/OneDrive/Projetos/2019/EconomizaMais/app/src/main/AndroidManifest.xml:18:13-58
-	android:icon
-		ADDED from /Users/danilo/Desktop/OneDrive/Projetos/2019/EconomizaMais/app/src/main/AndroidManifest.xml:16:13-47
-	android:allowBackup
 		ADDED from /Users/danilo/Desktop/OneDrive/Projetos/2019/EconomizaMais/app/src/main/AndroidManifest.xml:15:13-39
-	android:theme
-		ADDED from /Users/danilo/Desktop/OneDrive/Projetos/2019/EconomizaMais/app/src/main/AndroidManifest.xml:20:13-44
-	android:usesCleartextTraffic
-		ADDED from /Users/danilo/Desktop/OneDrive/Projetos/2019/EconomizaMais/app/src/main/AndroidManifest.xml:21:13-48
-uses-library#org.apache.http.legacy
-ADDED from /Users/danilo/Desktop/OneDrive/Projetos/2019/EconomizaMais/app/src/main/AndroidManifest.xml:23:9-87
-	android:required
-		ADDED from /Users/danilo/Desktop/OneDrive/Projetos/2019/EconomizaMais/app/src/main/AndroidManifest.xml:23:61-85
-	android:name
-		ADDED from /Users/danilo/Desktop/OneDrive/Projetos/2019/EconomizaMais/app/src/main/AndroidManifest.xml:23:23-60
-activity#br.com.economizamais.code.view.DetalhesLojaActivity
-ADDED from /Users/danilo/Desktop/OneDrive/Projetos/2019/EconomizaMais/app/src/main/AndroidManifest.xml:25:9-29:16
-	android:windowSoftInputMode
-		ADDED from /Users/danilo/Desktop/OneDrive/Projetos/2019/EconomizaMais/app/src/main/AndroidManifest.xml:27:19-60
-	android:name
-		ADDED from /Users/danilo/Desktop/OneDrive/Projetos/2019/EconomizaMais/app/src/main/AndroidManifest.xml:25:19-65
-meta-data#com.google.android.geo.API_KEY
-ADDED from /Users/danilo/Desktop/OneDrive/Projetos/2019/EconomizaMais/app/src/main/AndroidManifest.xml:31:9-33:74
-	android:value
-		ADDED from /Users/danilo/Desktop/OneDrive/Projetos/2019/EconomizaMais/app/src/main/AndroidManifest.xml:33:17-72
-	android:name
-		ADDED from /Users/danilo/Desktop/OneDrive/Projetos/2019/EconomizaMais/app/src/main/AndroidManifest.xml:32:17-62
-activity#br.com.economizamais.code.view.Mapa
-ADDED from /Users/danilo/Desktop/OneDrive/Projetos/2019/EconomizaMais/app/src/main/AndroidManifest.xml:35:9-39:20
-	android:name
-		ADDED from /Users/danilo/Desktop/OneDrive/Projetos/2019/EconomizaMais/app/src/main/AndroidManifest.xml:35:19-49
-intent-filter#action:name:android.intent.action.MAIN
-ADDED from /Users/danilo/Desktop/OneDrive/Projetos/2019/EconomizaMais/app/src/main/AndroidManifest.xml:36:13-38:29
-action#android.intent.action.MAIN
-ADDED from /Users/danilo/Desktop/OneDrive/Projetos/2019/EconomizaMais/app/src/main/AndroidManifest.xml:37:17-68
-	android:name
-		ADDED from /Users/danilo/Desktop/OneDrive/Projetos/2019/EconomizaMais/app/src/main/AndroidManifest.xml:37:25-66
-activity#br.com.economizamais.code.view.DetalhesProdutoActivity
-ADDED from /Users/danilo/Desktop/OneDrive/Projetos/2019/EconomizaMais/app/src/main/AndroidManifest.xml:40:9-41:20
-	android:name
-		ADDED from /Users/danilo/Desktop/OneDrive/Projetos/2019/EconomizaMais/app/src/main/AndroidManifest.xml:40:19-68
-activity#br.com.economizamais.code.view.MainActivity
-ADDED from /Users/danilo/Desktop/OneDrive/Projetos/2019/EconomizaMais/app/src/main/AndroidManifest.xml:42:9-51:20
 	android:label
-		ADDED from /Users/danilo/Desktop/OneDrive/Projetos/2019/EconomizaMais/app/src/main/AndroidManifest.xml:44:17-61
-	android:name
-		ADDED from /Users/danilo/Desktop/OneDrive/Projetos/2019/EconomizaMais/app/src/main/AndroidManifest.xml:43:17-55
-intent-filter#action:name:ABRIR_TELA+category:name:DETALHES+category:name:android.intent.category.DEFAULT
-ADDED from /Users/danilo/Desktop/OneDrive/Projetos/2019/EconomizaMais/app/src/main/AndroidManifest.xml:45:13-50:29
-action#ABRIR_TELA
-ADDED from /Users/danilo/Desktop/OneDrive/Projetos/2019/EconomizaMais/app/src/main/AndroidManifest.xml:46:17-52
-	android:name
-		ADDED from /Users/danilo/Desktop/OneDrive/Projetos/2019/EconomizaMais/app/src/main/AndroidManifest.xml:46:25-50
-category#android.intent.category.DEFAULT
-ADDED from /Users/danilo/Desktop/OneDrive/Projetos/2019/EconomizaMais/app/src/main/AndroidManifest.xml:48:17-75
-	android:name
-		ADDED from /Users/danilo/Desktop/OneDrive/Projetos/2019/EconomizaMais/app/src/main/AndroidManifest.xml:48:27-73
-category#DETALHES
-ADDED from /Users/danilo/Desktop/OneDrive/Projetos/2019/EconomizaMais/app/src/main/AndroidManifest.xml:49:17-52
-	android:name
-		ADDED from /Users/danilo/Desktop/OneDrive/Projetos/2019/EconomizaMais/app/src/main/AndroidManifest.xml:49:27-50
-activity#br.com.economizamais.code.view.SplashActivity
-ADDED from /Users/danilo/Desktop/OneDrive/Projetos/2019/EconomizaMais/app/src/main/AndroidManifest.xml:52:9-60:20
+		ADDED from /Users/danilo/Desktop/OneDrive/Projetos/2019/EconomizaMais/app/src/main/AndroidManifest.xml:13:13-45
+	android:roundIcon
+		ADDED from /Users/danilo/Desktop/OneDrive/Projetos/2019/EconomizaMais/app/src/main/AndroidManifest.xml:14:13-58
+	android:icon
+		ADDED from /Users/danilo/Desktop/OneDrive/Projetos/2019/EconomizaMais/app/src/main/AndroidManifest.xml:12:13-47
+	android:allowBackup
+		ADDED from /Users/danilo/Desktop/OneDrive/Projetos/2019/EconomizaMais/app/src/main/AndroidManifest.xml:11:13-39
 	android:theme
-		ADDED from /Users/danilo/Desktop/OneDrive/Projetos/2019/EconomizaMais/app/src/main/AndroidManifest.xml:54:17-59
+		ADDED from /Users/danilo/Desktop/OneDrive/Projetos/2019/EconomizaMais/app/src/main/AndroidManifest.xml:16:13-44
+	android:usesCleartextTraffic
+		ADDED from /Users/danilo/Desktop/OneDrive/Projetos/2019/EconomizaMais/app/src/main/AndroidManifest.xml:17:13-48
+activity#br.com.economizamais.code.view.TesteActivity
+ADDED from /Users/danilo/Desktop/OneDrive/Projetos/2019/EconomizaMais/app/src/main/AndroidManifest.xml:18:9-27:20
+	android:theme
+		ADDED from /Users/danilo/Desktop/OneDrive/Projetos/2019/EconomizaMais/app/src/main/AndroidManifest.xml:19:13-55
 	android:name
-		ADDED from /Users/danilo/Desktop/OneDrive/Projetos/2019/EconomizaMais/app/src/main/AndroidManifest.xml:53:17-57
+		ADDED from /Users/danilo/Desktop/OneDrive/Projetos/2019/EconomizaMais/app/src/main/AndroidManifest.xml:18:19-58
 intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
-ADDED from /Users/danilo/Desktop/OneDrive/Projetos/2019/EconomizaMais/app/src/main/AndroidManifest.xml:55:13-59:29
-category#android.intent.category.LAUNCHER
-ADDED from /Users/danilo/Desktop/OneDrive/Projetos/2019/EconomizaMais/app/src/main/AndroidManifest.xml:58:17-76
+ADDED from /Users/danilo/Desktop/OneDrive/Projetos/2019/EconomizaMais/app/src/main/AndroidManifest.xml:21:13-25:29
+action#android.intent.action.MAIN
+ADDED from /Users/danilo/Desktop/OneDrive/Projetos/2019/EconomizaMais/app/src/main/AndroidManifest.xml:22:17-68
 	android:name
-		ADDED from /Users/danilo/Desktop/OneDrive/Projetos/2019/EconomizaMais/app/src/main/AndroidManifest.xml:58:27-74
+		ADDED from /Users/danilo/Desktop/OneDrive/Projetos/2019/EconomizaMais/app/src/main/AndroidManifest.xml:22:25-66
+category#android.intent.category.LAUNCHER
+ADDED from /Users/danilo/Desktop/OneDrive/Projetos/2019/EconomizaMais/app/src/main/AndroidManifest.xml:24:17-76
+	android:name
+		ADDED from /Users/danilo/Desktop/OneDrive/Projetos/2019/EconomizaMais/app/src/main/AndroidManifest.xml:24:27-74
+uses-library#org.apache.http.legacy
+ADDED from /Users/danilo/Desktop/OneDrive/Projetos/2019/EconomizaMais/app/src/main/AndroidManifest.xml:29:9-31:43
+	android:required
+		ADDED from /Users/danilo/Desktop/OneDrive/Projetos/2019/EconomizaMais/app/src/main/AndroidManifest.xml:31:17-41
+	android:name
+		ADDED from /Users/danilo/Desktop/OneDrive/Projetos/2019/EconomizaMais/app/src/main/AndroidManifest.xml:30:17-54
+activity#br.com.economizamais.code.view.DetalhesLojaActivity
+ADDED from /Users/danilo/Desktop/OneDrive/Projetos/2019/EconomizaMais/app/src/main/AndroidManifest.xml:33:9-36:20
+	android:windowSoftInputMode
+		ADDED from /Users/danilo/Desktop/OneDrive/Projetos/2019/EconomizaMais/app/src/main/AndroidManifest.xml:35:17-58
+	android:name
+		ADDED from /Users/danilo/Desktop/OneDrive/Projetos/2019/EconomizaMais/app/src/main/AndroidManifest.xml:34:17-63
+meta-data#com.google.android.geo.API_KEY
+ADDED from /Users/danilo/Desktop/OneDrive/Projetos/2019/EconomizaMais/app/src/main/AndroidManifest.xml:38:9-40:74
+	android:value
+		ADDED from /Users/danilo/Desktop/OneDrive/Projetos/2019/EconomizaMais/app/src/main/AndroidManifest.xml:40:17-72
+	android:name
+		ADDED from /Users/danilo/Desktop/OneDrive/Projetos/2019/EconomizaMais/app/src/main/AndroidManifest.xml:39:17-62
+activity#br.com.economizamais.code.view.Mapa
+ADDED from /Users/danilo/Desktop/OneDrive/Projetos/2019/EconomizaMais/app/src/main/AndroidManifest.xml:42:9-46:20
+	android:name
+		ADDED from /Users/danilo/Desktop/OneDrive/Projetos/2019/EconomizaMais/app/src/main/AndroidManifest.xml:42:19-49
+intent-filter#action:name:android.intent.action.MAIN
+ADDED from /Users/danilo/Desktop/OneDrive/Projetos/2019/EconomizaMais/app/src/main/AndroidManifest.xml:43:13-45:29
+activity#br.com.economizamais.code.view.DetalhesProdutoActivity
+ADDED from /Users/danilo/Desktop/OneDrive/Projetos/2019/EconomizaMais/app/src/main/AndroidManifest.xml:47:9-48:20
+	android:name
+		ADDED from /Users/danilo/Desktop/OneDrive/Projetos/2019/EconomizaMais/app/src/main/AndroidManifest.xml:47:19-68
+activity#br.com.economizamais.code.view.MainActivity
+ADDED from /Users/danilo/Desktop/OneDrive/Projetos/2019/EconomizaMais/app/src/main/AndroidManifest.xml:49:9-58:20
+	android:label
+		ADDED from /Users/danilo/Desktop/OneDrive/Projetos/2019/EconomizaMais/app/src/main/AndroidManifest.xml:51:17-61
+	android:name
+		ADDED from /Users/danilo/Desktop/OneDrive/Projetos/2019/EconomizaMais/app/src/main/AndroidManifest.xml:50:17-55
+intent-filter#action:name:ABRIR_TELA+category:name:DETALHES+category:name:android.intent.category.DEFAULT
+ADDED from /Users/danilo/Desktop/OneDrive/Projetos/2019/EconomizaMais/app/src/main/AndroidManifest.xml:52:13-57:29
+action#ABRIR_TELA
+ADDED from /Users/danilo/Desktop/OneDrive/Projetos/2019/EconomizaMais/app/src/main/AndroidManifest.xml:53:17-52
+	android:name
+		ADDED from /Users/danilo/Desktop/OneDrive/Projetos/2019/EconomizaMais/app/src/main/AndroidManifest.xml:53:25-50
+category#android.intent.category.DEFAULT
+ADDED from /Users/danilo/Desktop/OneDrive/Projetos/2019/EconomizaMais/app/src/main/AndroidManifest.xml:55:17-75
+	android:name
+		ADDED from /Users/danilo/Desktop/OneDrive/Projetos/2019/EconomizaMais/app/src/main/AndroidManifest.xml:55:27-73
+category#DETALHES
+ADDED from /Users/danilo/Desktop/OneDrive/Projetos/2019/EconomizaMais/app/src/main/AndroidManifest.xml:56:17-52
+	android:name
+		ADDED from /Users/danilo/Desktop/OneDrive/Projetos/2019/EconomizaMais/app/src/main/AndroidManifest.xml:56:27-50
+activity#br.com.economizamais.code.view.SplashActivity
+ADDED from /Users/danilo/Desktop/OneDrive/Projetos/2019/EconomizaMais/app/src/main/AndroidManifest.xml:59:9-68:20
+	android:theme
+		ADDED from /Users/danilo/Desktop/OneDrive/Projetos/2019/EconomizaMais/app/src/main/AndroidManifest.xml:61:17-59
+	android:name
+		ADDED from /Users/danilo/Desktop/OneDrive/Projetos/2019/EconomizaMais/app/src/main/AndroidManifest.xml:60:17-57
 uses-sdk
 INJECTED from /Users/danilo/Desktop/OneDrive/Projetos/2019/EconomizaMais/app/src/main/AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from /Users/danilo/Desktop/OneDrive/Projetos/2019/EconomizaMais/app/src/main/AndroidManifest.xml
@@ -220,6 +227,8 @@ MERGED from [com.google.android.gms:play-services-maps:16.0.0] /Users/danilo/.gr
 MERGED from [com.google.android.gms:play-services-maps:16.0.0] /Users/danilo/.gradle/caches/transforms-1/files-1.1/play-services-maps-16.0.0.aar/144752efddbed170eda1ebdf466a5a8f/AndroidManifest.xml:20:5-44
 MERGED from [com.google.android.gms:play-services-location:16.0.0] /Users/danilo/.gradle/caches/transforms-1/files-1.1/play-services-location-16.0.0.aar/e736ac5b54d84915e1f3a020b086979f/AndroidManifest.xml:5:5-44
 MERGED from [com.google.android.gms:play-services-location:16.0.0] /Users/danilo/.gradle/caches/transforms-1/files-1.1/play-services-location-16.0.0.aar/e736ac5b54d84915e1f3a020b086979f/AndroidManifest.xml:5:5-44
+MERGED from [com.android.support:multidex:1.0.3] /Users/danilo/.gradle/caches/transforms-1/files-1.1/multidex-1.0.3.aar/ac3edcb6151d98e099f71dd5e76b0439/AndroidManifest.xml:20:5-43
+MERGED from [com.android.support:multidex:1.0.3] /Users/danilo/.gradle/caches/transforms-1/files-1.1/multidex-1.0.3.aar/ac3edcb6151d98e099f71dd5e76b0439/AndroidManifest.xml:20:5-43
 MERGED from [com.google.maps.android:android-maps-utils:0.4.4] /Users/danilo/.gradle/caches/transforms-1/files-1.1/android-maps-utils-0.4.4.aar/27a37dba7e77847ffd5e92ddafe80377/AndroidManifest.xml:5:5-43
 MERGED from [com.google.maps.android:android-maps-utils:0.4.4] /Users/danilo/.gradle/caches/transforms-1/files-1.1/android-maps-utils-0.4.4.aar/27a37dba7e77847ffd5e92ddafe80377/AndroidManifest.xml:5:5-43
 MERGED from [com.android.volley:volley:1.1.1] /Users/danilo/.gradle/caches/transforms-1/files-1.1/volley-1.1.1.aar/d5e00ac8f7041021cf7847b65249b8d8/AndroidManifest.xml:7:5-43

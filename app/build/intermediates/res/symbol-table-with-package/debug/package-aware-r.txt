@@ -1208,6 +1208,7 @@ id imageView_Adicionar
 id imageView_AdicionarLista
 id imageView_Ligar
 id imageView_LogoLoja
+id imageView_LojaTeste
 id imageView_Produto
 id imageView_Rotas
 id imageView_Voltar
@@ -1418,6 +1419,7 @@ layout activity_detalhes_produto
 layout activity_main
 layout activity_mapa
 layout activity_splash
+layout activity_teste
 layout amu_info_window
 layout amu_text_bubble
 layout amu_webview
