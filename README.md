@@ -1,5 +1,5 @@
 # Economiza Mais
-Aplicativo que Realiza que mostra informações de produtos e preços de estabelecimentos comerciais e realiza comparações de forma indireta.
+Aplicativo que mostra informações de produtos e preços de estabelecimentos comerciais e realiza comparações de forma indireta.
 
 - Plataforma: `Android`
 
